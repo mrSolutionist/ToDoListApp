@@ -15,6 +15,7 @@
 		BCE7F50827042756004662EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE7F50727042756004662EF /* Assets.xcassets */; };
 		BCE7F50B27042756004662EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE7F50927042756004662EF /* LaunchScreen.storyboard */; };
 		BCE7F51627043964004662EF /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F51527043964004662EF /* SignUpVC.swift */; };
+		BCE7F518270581AA004662EF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F517270581AA004662EF /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BCE7F50A27042756004662EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCE7F50C27042756004662EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE7F51527043964004662EF /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		BCE7F517270581AA004662EF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE7F50127042755004662EF /* Main.storyboard */,
+				BCE7F517270581AA004662EF /* CoreDataManager.swift */,
 				BCE7F51527043964004662EF /* SignUpVC.swift */,
 				BCE7F50927042756004662EF /* LaunchScreen.storyboard */,
 			);
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE7F518270581AA004662EF /* CoreDataManager.swift in Sources */,
 				BCE7F50027042755004662EF /* ViewController.swift in Sources */,
 				BCE7F50627042755004662EF /* ToDoApp_X12.xcdatamodeld in Sources */,
 				BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */,
