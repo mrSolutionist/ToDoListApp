@@ -14,8 +14,9 @@ import CoreData
 
 class CoreDataManager{
     
-    private init(){}
+    
     static let shared = CoreDataManager()
+    private init(){}
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -59,19 +60,24 @@ class CoreDataManager{
         }
     }
     
+    //data base functions
     let context = CoreDataManager.shared.persistentContainer.viewContext
     func userData(name:String, password:String, username: String) -> Bool{
-        
-        let userData = UserData(context: context)
-        userData.name = name
-        userData.password = password
-        userData.username = username
-        
-        try!context.save()
-        
+
+        let userData1 = UserData(context: context)
+        userData1.name = name
+        userData1.password = password
+        userData1.username = username
+        do {
+            try context.save()
+        } catch  {
+            print("error")
+        }
+
+
         return true
     }
-    
+
 }
 
 

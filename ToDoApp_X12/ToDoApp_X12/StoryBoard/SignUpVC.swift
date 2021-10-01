@@ -17,7 +17,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var nameField: UITextField!
-    
+    lazy var coreDataManager = CoreDataManager.shared
     
     //main
     override func viewDidLoad() {
@@ -43,12 +43,13 @@ class SignUpVC: UIViewController {
         
         //assigning data
         let name = nameField.text!
+       
         let password = passwordField.text!
         let username = userNameField.text!
-        
-        //condition check and save
+        print(name,password,username)
+//        condition check and save
         if !notEmpty() && (passwordField.text == rePasswordField.text){
-            let save = CoreDataManager.shared.userData(name: name, password: password, username: username)
+            let save = coreDataManager.userData(name: name, password: password, username: username)
             if save {
                let alert =  UIAlertController(title: "Saved", message: nil, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
