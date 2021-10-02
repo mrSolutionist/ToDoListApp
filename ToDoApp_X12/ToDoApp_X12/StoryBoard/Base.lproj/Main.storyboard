@@ -55,7 +55,7 @@
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hK5-im-jqL" kind="show" id="ybn-eE-rxP"/>
+                                    <action selector="loginBtn:" destination="J2j-vf-dUa" eventType="touchUpInside" id="pjK-Sy-G0G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y20-7K-68D">
@@ -92,6 +92,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wnc-T2-u8a"/>
+                    <connections>
+                        <outlet property="passwordLabel" destination="ybX-XW-Wfz" id="NfW-Xz-K8s"/>
+                        <outlet property="userNameLabel" destination="yND-Rt-9Rk" id="GJX-lY-ySe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4K-2e-Xff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="592.75362318840587" y="-1276.3392857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--User Tab Bar ControllerVC-->
         <scene sceneID="tbb-E3-fHD">
             <objects>
-                <tabBarController id="hK5-im-jqL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabViewId" id="hK5-im-jqL" customClass="UserTabBarControllerVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7Mt-qy-jIB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="84s-5x-xGB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

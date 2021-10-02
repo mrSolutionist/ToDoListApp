@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
 		BCA8F5C42705B8BE00E71F83 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C22705B8BE00E71F83 /* UserData+CoreDataClass.swift */; };
 		BCA8F5C52705B8BE00E71F83 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C32705B8BE00E71F83 /* UserData+CoreDataProperties.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarControllerVC.swift; sourceTree = "<group>"; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BCA8F5C22705B8BE00E71F83 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BCA8F5C32705B8BE00E71F83 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -91,7 +93,9 @@
 		BCE7F51327042910004662EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */,
 				BCE7F4FF27042755004662EF /* ViewController.swift */,
+				BCE7F51527043964004662EF /* SignUpVC.swift */,
 				BCA8F5C02705985800E71F83 /* LoginVC.swift */,
 			);
 			path = Controller;
@@ -101,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				BCE7F50127042755004662EF /* Main.storyboard */,
-				BCE7F51527043964004662EF /* SignUpVC.swift */,
 				BCE7F50927042756004662EF /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
@@ -194,6 +197,7 @@
 				BCA8F5C42705B8BE00E71F83 /* UserData+CoreDataClass.swift in Sources */,
 				BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */,
 				BCA8F5C52705B8BE00E71F83 /* UserData+CoreDataProperties.swift in Sources */,
+				BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,
 				BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */,
 			);

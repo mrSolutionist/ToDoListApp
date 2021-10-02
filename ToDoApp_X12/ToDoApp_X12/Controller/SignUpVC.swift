@@ -17,22 +17,19 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var nameField: UITextField!
-    lazy var coreDataManager = CoreDataManager.shared
+  
     
     //main
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        }
         
-        // Do any additional setup after loading the view.
-    }
-    
     //check for if any data input else back to login
     @IBAction func cancelBtn(_ sender: Any) {
         //condition check for data
         if notEmpty(){
-            
-            //VC change
-            self.navigationController?.popViewController(animated: true)
+            exit()
         }
         
     }
@@ -47,17 +44,19 @@ class SignUpVC: UIViewController {
         let password = passwordField.text!
         let username = userNameField.text!
         print(name,password,username)
+        
 //        condition check and save
         if !notEmpty() && (passwordField.text == rePasswordField.text){
-            let save = coreDataManager.userData(name: name, password: password, username: username)
+            print("hello")
+            let cor = CoreDataManager.shared
+            let save = cor.saveUser(name: name, password: password, username: username)
             if save {
                let alert =  UIAlertController(title: "Saved", message: nil, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler:{action in self.exit()
+                }))
+                self.present(alert, animated: true, completion:nil )
             }
         }
-        
-      
-        
     }
     
     // clik on image to move to cam view conroller
@@ -73,9 +72,15 @@ class SignUpVC: UIViewController {
         }
         return false
     }
-
     
+    
+    //pop to previous vc
+    func exit()  {
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
+
 
 
 

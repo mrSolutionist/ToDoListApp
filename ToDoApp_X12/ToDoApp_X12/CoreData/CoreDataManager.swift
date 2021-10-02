@@ -14,9 +14,11 @@ import CoreData
 
 class CoreDataManager{
     
-    
+    //    let context = CoreDataManager.shared
     static let shared = CoreDataManager()
-    private init(){}
+    private init(){
+        print("hi")
+    }
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -60,25 +62,74 @@ class CoreDataManager{
         }
     }
     
-    //data base functions
-    let context = CoreDataManager.shared.persistentContainer.viewContext
-    func userData(name:String, password:String, username: String) -> Bool{
-
-        let userData1 = UserData(context: context)
-        userData1.name = name
-        userData1.password = password
-        userData1.username = username
+    //  data base functions //
+    
+    //Saving userdata after signUp
+    func saveUser(name:String, password:String, username: String) -> Bool{
+        
+        let userData = UserData(context:persistentContainer.viewContext)
+        userData.name = name
+        userData.password = password
+        userData.username = username
         do {
-            try context.save()
+            try persistentContainer.viewContext.save()
         } catch  {
             print("error")
         }
-
-
+        
+        
         return true
     }
-
+    
+    //login Validation Function
+    
+    func loginValidate(name:String,pass:String) -> Bool  {
+        
+        var result = NSArray()
+        //this somehow fetches the data with passed arg!
+        let username = NSPredicate(format: "username = %@",name)
+        let password = NSPredicate(format: "password = %@", pass)
+        
+        //
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
+        
+        //no idea what the following code does
+        fetchRequest.predicate = username
+//        fetchRequest.predicate = password
+        
+        do
+            {
+                result = try persistentContainer.viewContext.fetch(fetchRequest) as NSArray
+                
+                if result.count>0
+                {
+                    let objectentity = result.firstObject as! UserData
+                    
+                    if objectentity.username! as NSObject == username && objectentity.password! as NSObject  == password
+                    {
+                        print("Login Succesfully")
+                        return true
+                    }
+                    else
+                    {
+                        print("Wrong username or password !!!")
+                        return false
+                    }
+                }
+                
+            }
+        
+        catch
+        {
+            let fetch_error = error as NSError
+            print("error", fetch_error.localizedDescription)
+        }
+        return false
+    }
+  
+    
 }
+
 
 
 
