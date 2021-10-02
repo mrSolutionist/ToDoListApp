@@ -85,8 +85,8 @@ class CoreDataManager{
     
     func loginValidate(name:String,pass:String) -> Bool  {
         
-        var result = NSArray()
-        //this somehow fetches the data with passed arg!
+
+        //this converts the arg into predicate
         let username = NSPredicate(format: "username = %@",name)
         let password = NSPredicate(format: "password = %@", pass)
         
@@ -94,18 +94,22 @@ class CoreDataManager{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
         
         //no idea what the following code does
+        //mayb it uses username as predicate to search .
         fetchRequest.predicate = username
 //        fetchRequest.predicate = password
         
         do
             {
-                result = try persistentContainer.viewContext.fetch(fetchRequest) as NSArray
+               let result = try persistentContainer.viewContext.fetch(fetchRequest) as NSArray
                 
                 if result.count>0
                 {
                     let objectentity = result.firstObject as! UserData
                     
-                    if objectentity.username! as NSObject == username && objectentity.password! as NSObject  == password
+                    let dbName = objectentity.username!
+                    let dbPassword = objectentity.password!
+                    //left part is currently object and it wont equate with string, i guss!
+                    if dbName as! NSObject == username && dbPassword as! NSObject == password
                     {
                         print("Login Succesfully")
                         return true

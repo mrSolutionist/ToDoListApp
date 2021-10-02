@@ -322,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNx-wW-fjN">
-                                <rect key="frame" x="164" y="144" width="88" height="77"/>
+                                <rect key="frame" x="166" y="144" width="88" height="77"/>
                                 <state key="normal" title="Button" image="1965310">
                                     <color key="titleColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -330,12 +330,15 @@
                                     <action selector="profileImageBtn:" destination="FjK-BU-9lA" eventType="touchUpInside" id="CNB-HP-uFx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJy-tc-4ep">
+                                <rect key="frame" x="127" y="116" width="160" height="132"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ws1-Io-7ju"/>
                         <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PAZ-vx-Koa" firstAttribute="trailing" secondItem="KtY-Pf-w2K" secondAttribute="trailingMargin" id="1ga-oM-44Z"/>
-                            <constraint firstItem="WNx-wW-fjN" firstAttribute="leading" secondItem="Ws1-Io-7ju" secondAttribute="leading" constant="164" id="2t7-do-wUw"/>
+                            <constraint firstItem="WNx-wW-fjN" firstAttribute="leading" secondItem="Ws1-Io-7ju" secondAttribute="leading" constant="166" id="2t7-do-wUw"/>
                             <constraint firstItem="Ws1-Io-7ju" firstAttribute="trailing" secondItem="yau-HI-2MD" secondAttribute="trailing" constant="84" id="39e-iw-efT"/>
                             <constraint firstItem="KmU-NM-Ep2" firstAttribute="leading" secondItem="VUz-v7-tu9" secondAttribute="leading" id="4zh-6V-8n1"/>
                             <constraint firstItem="KmU-NM-Ep2" firstAttribute="leading" secondItem="KtY-Pf-w2K" secondAttribute="leadingMargin" id="6Dp-sw-T9e"/>
@@ -348,24 +351,29 @@
                             <constraint firstItem="yau-HI-2MD" firstAttribute="leading" secondItem="Ws1-Io-7ju" secondAttribute="leading" constant="91" id="QeO-LB-UPk"/>
                             <constraint firstItem="Yk6-Rk-yVp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KmU-NM-Ep2" secondAttribute="trailing" id="QjP-lK-Iv0"/>
                             <constraint firstItem="VUz-v7-tu9" firstAttribute="leading" secondItem="BZz-2d-Ehj" secondAttribute="leading" id="TfF-xt-pnf"/>
+                            <constraint firstItem="XJy-tc-4ep" firstAttribute="top" secondItem="PAZ-vx-Koa" secondAttribute="bottom" constant="33" id="Tte-x1-Bzv"/>
                             <constraint firstItem="PAZ-vx-Koa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yk6-Rk-yVp" secondAttribute="trailing" id="X9y-7d-Ymk"/>
                             <constraint firstItem="PAZ-vx-Koa" firstAttribute="top" secondItem="Ws1-Io-7ju" secondAttribute="top" constant="9" id="aQl-NE-9fQ"/>
                             <constraint firstItem="Ws1-Io-7ju" firstAttribute="bottom" secondItem="yau-HI-2MD" secondAttribute="bottom" constant="238" id="aRl-MS-cHF"/>
+                            <constraint firstItem="Ws1-Io-7ju" firstAttribute="trailing" secondItem="XJy-tc-4ep" secondAttribute="trailing" constant="127" id="b5R-gx-iKT"/>
                             <constraint firstItem="BZz-2d-Ehj" firstAttribute="top" secondItem="VUz-v7-tu9" secondAttribute="bottom" constant="32" id="cUN-vK-B7u"/>
                             <constraint firstItem="KmU-NM-Ep2" firstAttribute="top" secondItem="Yk6-Rk-yVp" secondAttribute="bottom" constant="38" id="e3p-zS-DEm"/>
                             <constraint firstItem="Yk6-Rk-yVp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KtY-Pf-w2K" secondAttribute="leadingMargin" id="gWt-AO-AhW"/>
                             <constraint firstItem="VUz-v7-tu9" firstAttribute="trailing" secondItem="BZz-2d-Ehj" secondAttribute="trailing" id="gpU-tT-0LE"/>
                             <constraint firstItem="VUz-v7-tu9" firstAttribute="top" secondItem="KmU-NM-Ep2" secondAttribute="bottom" constant="38" id="jTr-39-c4M"/>
                             <constraint firstItem="Yk6-Rk-yVp" firstAttribute="top" secondItem="WNx-wW-fjN" secondAttribute="bottom" constant="73" id="l04-Sb-mJE"/>
+                            <constraint firstItem="Yk6-Rk-yVp" firstAttribute="top" secondItem="XJy-tc-4ep" secondAttribute="bottom" constant="46" id="lbt-ix-vnh"/>
+                            <constraint firstItem="XJy-tc-4ep" firstAttribute="leading" secondItem="Ws1-Io-7ju" secondAttribute="leading" constant="127" id="sv1-dm-Vee"/>
                             <constraint firstItem="KmU-NM-Ep2" firstAttribute="leading" secondItem="Yk6-Rk-yVp" secondAttribute="leading" id="uZp-gs-gfL"/>
-                            <constraint firstItem="Ws1-Io-7ju" firstAttribute="trailing" secondItem="WNx-wW-fjN" secondAttribute="trailing" constant="162" id="vXA-Kj-f95"/>
+                            <constraint firstItem="Ws1-Io-7ju" firstAttribute="trailing" secondItem="WNx-wW-fjN" secondAttribute="trailing" constant="160" id="vXA-Kj-f95"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vMc-zA-fQ6"/>
                     <connections>
+                        <outlet property="camBtn" destination="WNx-wW-fjN" id="aab-nh-4gm"/>
                         <outlet property="nameField" destination="Yk6-Rk-yVp" id="rOc-a7-nsb"/>
                         <outlet property="passwordField" destination="VUz-v7-tu9" id="Seh-cX-QO2"/>
-                        <outlet property="profileImage" destination="WNx-wW-fjN" id="aab-nh-4gm"/>
+                        <outlet property="profileImg" destination="XJy-tc-4ep" id="e4g-1e-TTp"/>
                         <outlet property="rePasswordField" destination="BZz-2d-Ehj" id="HE2-wj-OwY"/>
                         <outlet property="userNameField" destination="KmU-NM-Ep2" id="4a7-aO-4T1"/>
                     </connections>
