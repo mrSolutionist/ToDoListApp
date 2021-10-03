@@ -66,7 +66,7 @@
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FjK-BU-9lA" kind="show" id="8py-3l-WCW"/>
+                                    <segue destination="FjK-BU-9lA" kind="presentation" id="p2d-FR-sx5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,11 +259,11 @@
             <objects>
                 <viewController id="FjK-BU-9lA" customClass="SignUpVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KtY-Pf-w2K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-Rk-yVp">
-                                <rect key="frame" x="20" y="294" width="374" height="34"/>
+                                <rect key="frame" x="20" y="240" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="BBE-Ry-UFa"/>
                                 </constraints>
@@ -271,7 +271,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KmU-NM-Ep2">
-                                <rect key="frame" x="20" y="366" width="374" height="34"/>
+                                <rect key="frame" x="20" y="312" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="XVe-ns-TK1"/>
                                 </constraints>
@@ -279,7 +279,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUz-v7-tu9">
-                                <rect key="frame" x="20" y="438" width="374" height="34"/>
+                                <rect key="frame" x="20" y="384" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="RTW-Zd-x9m"/>
                                 </constraints>
@@ -287,7 +287,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RE-ENTER PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZz-2d-Ehj">
-                                <rect key="frame" x="20" y="504" width="374" height="34"/>
+                                <rect key="frame" x="20" y="450" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bYJ-Ik-dCe"/>
                                 </constraints>
@@ -295,7 +295,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yau-HI-2MD">
-                                <rect key="frame" x="91" y="580" width="239" height="44"/>
+                                <rect key="frame" x="91" y="526" width="239" height="44"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="r71-UN-KWe"/>
@@ -309,7 +309,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAZ-vx-Koa">
-                                <rect key="frame" x="267" y="53" width="127" height="30"/>
+                                <rect key="frame" x="267" y="9" width="127" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MkN-3p-Ugf"/>
                                 </constraints>
@@ -322,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNx-wW-fjN">
-                                <rect key="frame" x="166" y="144" width="88" height="77"/>
+                                <rect key="frame" x="166" y="100" width="88" height="67"/>
                                 <state key="normal" title="Button" image="1965310">
                                     <color key="titleColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -331,7 +331,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJy-tc-4ep">
-                                <rect key="frame" x="127" y="116" width="160" height="132"/>
+                                <rect key="frame" x="127" y="72" width="160" height="122"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ws1-Io-7ju"/>

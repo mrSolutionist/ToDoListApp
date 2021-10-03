@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class SignUpVC: UIViewController {
     
     //profile pic outlet
     @IBOutlet weak var camBtn: UIButton!
@@ -87,6 +87,14 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
     }
     
     
+    
+    
+  
+    
+   
+}
+
+extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     //deligates of imagePickerController
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -95,23 +103,15 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-           
+            
             return
         }
         
-    
+        
         
         //passing image to profile
         profileImg.image = image
     }
-    
-  
-    
-   
-    
-    
-    
-    
 }
 
 

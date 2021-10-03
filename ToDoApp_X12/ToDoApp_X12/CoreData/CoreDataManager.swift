@@ -104,13 +104,15 @@ class CoreDataManager{
                 
                 if result.count>0
                 {
-                    let objectentity = result.firstObject as! UserData
                     
-                    let dbName = objectentity.username!
-                    let dbPassword = objectentity.password!
+                    let objectEntity = result.firstObject as! UserData
+                    
+                    let dbName = objectEntity.username!
+                    let dbPassword = objectEntity.password!
                     //left part is currently object and it wont equate with string, i guss!
-                    if dbName as! NSObject == username && dbPassword as! NSObject == password
-                    {
+                    if dbName  == name && dbPassword  == pass{
+                    UserDefaults.standard.set(true,forKey: "UserLoggedIn")
+                       
                         print("Login Succesfully")
                         return true
                     }

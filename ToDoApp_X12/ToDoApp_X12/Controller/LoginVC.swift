@@ -22,7 +22,10 @@ class LoginVC: UIViewController {
     @IBAction func loginBtn(_ sender: Any) {
         let name = userNameLabel.text!
         let pass = passwordLabel.text!
+        
         let loginPass = CoreDataManager.shared.loginValidate(name: name, pass: pass)
+        
+        // if credentials return true
         if loginPass{
             let loginVc = storyboard?.instantiateViewController(identifier: "tabViewId") as! UserTabBarControllerVC
             present(loginVc, animated: true, completion: nil)
