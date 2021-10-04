@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
         // if credentials return true
         if loginPass{
             let loginVc = storyboard?.instantiateViewController(identifier: "tabViewId") as! UserTabBarControllerVC
-            present(loginVc, animated: true, completion: nil)
+            navigationController?.pushViewController(loginVc, animated: true)
         }
         
     }
