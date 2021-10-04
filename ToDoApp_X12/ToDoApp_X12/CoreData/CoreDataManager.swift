@@ -111,7 +111,10 @@ class CoreDataManager{
                     let dbPassword = objectEntity.password!
                     //left part is currently object and it wont equate with string, i guss!
                     if dbName  == name && dbPassword  == pass{
-                    UserDefaults.standard.set(true,forKey: "UserLoggedIn")
+                   var defaults = UserDefaults.standard
+                        defaults.set(true,forKey: "UserLoggedIn")
+//                        defaults.set(objectEntity,forKey: "user")
+                        
                        
                         print("Login Succesfully")
                         return true

@@ -11,6 +11,7 @@
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
 		BCA8F5C42705B8BE00E71F83 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C22705B8BE00E71F83 /* UserData+CoreDataClass.swift */; };
 		BCA8F5C52705B8BE00E71F83 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C32705B8BE00E71F83 /* UserData+CoreDataProperties.swift */; };
+		BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF267E270A1797005514E4 /* ProfileViewController.swift */; };
 		BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FB27042755004662EF /* AppDelegate.swift */; };
 		BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FD27042755004662EF /* SceneDelegate.swift */; };
 		BCE7F50027042755004662EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FF27042755004662EF /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BCA8F5C22705B8BE00E71F83 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BCA8F5C32705B8BE00E71F83 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BCCF267E270A1797005514E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCE7F4F827042755004662EF /* ToDoApp_X12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp_X12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE7F4FB27042755004662EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE7F4FD27042755004662EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE7F50127042755004662EF /* Main.storyboard */,
+				BCCF267E270A1797005514E4 /* ProfileViewController.swift */,
 				BCE7F50927042756004662EF /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
@@ -196,6 +199,7 @@
 				BCE7F50627042755004662EF /* ToDoApp_X12.xcdatamodeld in Sources */,
 				BCA8F5C42705B8BE00E71F83 /* UserData+CoreDataClass.swift in Sources */,
 				BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */,
+				BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */,
 				BCA8F5C52705B8BE00E71F83 /* UserData+CoreDataProperties.swift in Sources */,
 				BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,

@@ -14,8 +14,15 @@ class LoginVC: UIViewController {
     @IBOutlet weak var userNameLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //checking for is user is logged in via UserDefault status
+        if UserDefaults.standard.bool(forKey: "UserLoggedIn") == true {
+            let story = UIStoryboard(name: "Main", bundle:nil)
+            let vc = story.instantiateViewController(withIdentifier: "tabViewId") as! UserTabBarControllerVC
+            UIApplication.shared.windows.first?.rootViewController = vc
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+       
     }
     
 
