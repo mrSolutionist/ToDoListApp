@@ -15,6 +15,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //checking for is user is logged in via UserDefault status
         if UserDefaults.standard.bool(forKey: "UserLoggedIn") == true {
             let story = UIStoryboard(name: "Main", bundle:nil)
@@ -34,8 +35,8 @@ class LoginVC: UIViewController {
         
         // if credentials return true
         if loginPass{
-            let loginVc = storyboard?.instantiateViewController(identifier: "tabViewId") as! UserTabBarControllerVC
-            navigationController?.pushViewController(loginVc, animated: true)
+            let tabVc = storyboard?.instantiateViewController(identifier: "tabViewId") as! UserTabBarControllerVC
+            UIApplication.shared.windows.first?.rootViewController = tabVc
         }
         
     }

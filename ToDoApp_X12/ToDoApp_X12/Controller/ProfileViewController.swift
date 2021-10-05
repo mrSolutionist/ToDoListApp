@@ -20,8 +20,8 @@ class ProfileViewController: UIViewController {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginId") as! LoginVC
         UIApplication.shared.windows.first?.rootViewController = vc
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
-        self.navigationController?.popToRootViewController(animated: true)
+        
+        
     }
     
     

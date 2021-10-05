@@ -13,7 +13,8 @@ import CoreData
 
 
 class CoreDataManager{
-    
+    let userFetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
+    let userTodoFetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoData")
     //    let context = CoreDataManager.shared
     static let shared = CoreDataManager()
     private init(){
@@ -91,16 +92,16 @@ class CoreDataManager{
         let password = NSPredicate(format: "password = %@", pass)
         
         //
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
+        
         
         //no idea what the following code does
         //mayb it uses username as predicate to search .
-        fetchRequest.predicate = username
+        userFetchRequest.predicate = username
 //        fetchRequest.predicate = password
         
         do
             {
-               let result = try persistentContainer.viewContext.fetch(fetchRequest) as NSArray
+               let result = try persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
                 
                 if result.count>0
                 {
@@ -134,6 +135,17 @@ class CoreDataManager{
             print("error", fetch_error.localizedDescription)
         }
         return false
+    }
+    
+    func userTodoFetch()   {
+        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) as NSArray
+    }
+    
+    func todoSave(title:String)  {
+        let todoUser = TodoData(context: persistentContainer.viewContext)
+        todoUser.tiile = title
+        
+        
     }
   
     
