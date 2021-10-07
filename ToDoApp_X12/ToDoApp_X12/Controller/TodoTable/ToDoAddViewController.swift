@@ -17,7 +17,8 @@ class ToDoAddViewController: UIViewController {
     }
     @IBAction func todoAdd(_ sender: Any) {
         
-        CoreDataManager.shared.todoSave(title: todoTitle.text ?? "no title")
+        ( CoreDataManager.shared.todoSave(title: todoTitle.text ?? "no title")) ? self.dismiss(animated: true, completion: nil): print("false")
+        
         
     }
     

@@ -6,14 +6,16 @@
 //
 
 import UIKit
-
+import CLTypingLabel
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var toDoLabel: CLTypingLabel!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var userNameLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        toDoLabel.text = "TO-DO"
         
         
         //checking for is user is logged in via UserDefault status

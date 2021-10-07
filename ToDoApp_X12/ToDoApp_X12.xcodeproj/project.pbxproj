@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AD770302C82B1013459DFC5 /* libPods-ToDoApp_X12.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D9B0D8BA34B768F522B001 /* libPods-ToDoApp_X12.a */; };
+		BC033A46270EE0A00092BA05 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC033A44270EE0A00092BA05 /* ToDoCell.swift */; };
+		BC033A47270EE0A00092BA05 /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC033A45270EE0A00092BA05 /* ToDoCell.xib */; };
 		BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */; };
 		BC140FB0270C7B71009BEFBB /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAC270C7B71009BEFBB /* UserData+CoreDataClass.swift */; };
 		BC140FB1270C7B71009BEFBB /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAD270C7B71009BEFBB /* UserData+CoreDataProperties.swift */; };
 		BC140FB2270C7B71009BEFBB /* TodoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAE270C7B71009BEFBB /* TodoData+CoreDataClass.swift */; };
 		BC140FB3270C7B71009BEFBB /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */; };
+		BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
 		BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF267E270A1797005514E4 /* ProfileViewController.swift */; };
 		BCCF2683270B48ED005514E4 /* ToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF2682270B48ED005514E4 /* ToDoTableView.swift */; };
-		BCCF2697270C7781005514E4 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF2696270C7781005514E4 /* ToDoTableViewCell.swift */; };
-		BCCF2699270C7863005514E4 /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF2698270C7863005514E4 /* ToDoAddViewController.swift */; };
 		BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FB27042755004662EF /* AppDelegate.swift */; };
 		BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FD27042755004662EF /* SceneDelegate.swift */; };
 		BCE7F50027042755004662EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FF27042755004662EF /* ViewController.swift */; };
@@ -29,16 +31,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AB079B4EEB3D1F05047D63A /* Pods-ToDoApp_X12.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp_X12.release.xcconfig"; path = "Target Support Files/Pods-ToDoApp_X12/Pods-ToDoApp_X12.release.xcconfig"; sourceTree = "<group>"; };
+		1A48FD1D200FACF6A8B6590C /* Pods-ToDoApp_X12.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp_X12.debug.xcconfig"; path = "Target Support Files/Pods-ToDoApp_X12/Pods-ToDoApp_X12.debug.xcconfig"; sourceTree = "<group>"; };
+		BC033A44270EE0A00092BA05 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		BC033A45270EE0A00092BA05 /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarControllerVC.swift; sourceTree = "<group>"; };
 		BC140FAC270C7B71009BEFBB /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BC140FAD270C7B71009BEFBB /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC140FAE270C7B71009BEFBB /* TodoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoAddViewController.swift; path = ToDoApp_X12/StoryBoard/ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BCCF267E270A1797005514E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCCF2682270B48ED005514E4 /* ToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableView.swift; sourceTree = "<group>"; };
-		BCCF2696270C7781005514E4 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		BCCF2698270C7863005514E4 /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCE7F4F827042755004662EF /* ToDoApp_X12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp_X12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE7F4FB27042755004662EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE7F4FD27042755004662EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		BCE7F50C27042756004662EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE7F51527043964004662EF /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BCE7F517270581AA004662EF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E9D9B0D8BA34B768F522B001 /* libPods-ToDoApp_X12.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoApp_X12.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +63,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD770302C82B1013459DFC5 /* libPods-ToDoApp_X12.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2B128C81564A848A8DA340 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D9B0D8BA34B768F522B001 /* libPods-ToDoApp_X12.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		834EADD13D435C65B6BFA741 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A48FD1D200FACF6A8B6590C /* Pods-ToDoApp_X12.debug.xcconfig */,
+				0AB079B4EEB3D1F05047D63A /* Pods-ToDoApp_X12.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC033A48270EE0BB0092BA05 /* mainController */ = {
+			isa = PBXGroup;
+			children = (
+				BCE7F51527043964004662EF /* SignUpVC.swift */,
+				BCA8F5C02705985800E71F83 /* LoginVC.swift */,
+			);
+			path = mainController;
+			sourceTree = "<group>";
+		};
+		BC033A49270EE1440092BA05 /* TodoTable */ = {
+			isa = PBXGroup;
+			children = (
+				BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */,
+				BC033A44270EE0A00092BA05 /* ToDoCell.swift */,
+				BC033A45270EE0A00092BA05 /* ToDoCell.xib */,
+			);
+			path = TodoTable;
+			sourceTree = "<group>";
+		};
 		BCE7F4EF27042755004662EF = {
 			isa = PBXGroup;
 			children = (
 				BCE7F4FA27042755004662EF /* ToDoApp_X12 */,
 				BCE7F4F927042755004662EF /* Products */,
+				834EADD13D435C65B6BFA741 /* Pods */,
+				4D2B128C81564A848A8DA340 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,14 +150,12 @@
 		BCE7F51327042910004662EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BCCF2698270C7863005514E4 /* ToDoAddViewController.swift */,
-				BCCF2696270C7781005514E4 /* ToDoTableViewCell.swift */,
+				BC033A49270EE1440092BA05 /* TodoTable */,
 				BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */,
 				BCE7F4FF27042755004662EF /* ViewController.swift */,
-				BCE7F51527043964004662EF /* SignUpVC.swift */,
+				BC033A48270EE0BB0092BA05 /* mainController */,
 				BCCF2682270B48ED005514E4 /* ToDoTableView.swift */,
 				BCCF267E270A1797005514E4 /* ProfileViewController.swift */,
-				BCA8F5C02705985800E71F83 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCE7F50F27042756004662EF /* Build configuration list for PBXNativeTarget "ToDoApp_X12" */;
 			buildPhases = (
+				ACC1A329DC7572330658DA38 /* [CP] Check Pods Manifest.lock */,
 				BCE7F4F427042755004662EF /* Sources */,
 				BCE7F4F527042755004662EF /* Frameworks */,
 				BCE7F4F627042755004662EF /* Resources */,
@@ -198,10 +242,36 @@
 				BCE7F50B27042756004662EF /* LaunchScreen.storyboard in Resources */,
 				BCE7F50827042756004662EF /* Assets.xcassets in Resources */,
 				BCE7F50327042755004662EF /* Main.storyboard in Resources */,
+				BC033A47270EE0A00092BA05 /* ToDoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACC1A329DC7572330658DA38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToDoApp_X12-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCE7F4F427042755004662EF /* Sources */ = {
@@ -211,19 +281,19 @@
 				BCE7F518270581AA004662EF /* CoreDataManager.swift in Sources */,
 				BCE7F50027042755004662EF /* ViewController.swift in Sources */,
 				BC140FB0270C7B71009BEFBB /* UserData+CoreDataClass.swift in Sources */,
-				BCCF2699270C7863005514E4 /* ToDoAddViewController.swift in Sources */,
 				BC140FB2270C7B71009BEFBB /* TodoData+CoreDataClass.swift in Sources */,
+				BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */,
 				BC140FB3270C7B71009BEFBB /* TodoData+CoreDataProperties.swift in Sources */,
 				BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */,
 				BCCF2683270B48ED005514E4 /* ToDoTableView.swift in Sources */,
 				BC140FB1270C7B71009BEFBB /* UserData+CoreDataProperties.swift in Sources */,
 				BCE7F50627042755004662EF /* ToDoApp_X12.xcdatamodeld in Sources */,
-				BCCF2697270C7781005514E4 /* ToDoTableViewCell.swift in Sources */,
 				BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */,
 				BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */,
 				BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,
 				BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */,
+				BC033A46270EE0A00092BA05 /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +437,7 @@
 		};
 		BCE7F51027042756004662EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A48FD1D200FACF6A8B6590C /* Pods-ToDoApp_X12.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +457,7 @@
 		};
 		BCE7F51127042756004662EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AB079B4EEB3D1F05047D63A /* Pods-ToDoApp_X12.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -137,13 +137,21 @@ class CoreDataManager{
         return false
     }
     
-    func userTodoFetch()   {
-        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) as NSArray
+    func userTodoFetch() -> Int  {
+        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) 
+        return todo.count
     }
     
-    func todoSave(title:String)  {
+    func todoSave(title:String) -> Bool {
         let todoUser = TodoData(context: persistentContainer.viewContext)
         todoUser.tiile = title
+        do {
+            try persistentContainer.viewContext.save()
+            return true
+        } catch  {
+           return false
+        }
+      
         
         
     }

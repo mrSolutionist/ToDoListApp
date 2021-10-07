@@ -9,11 +9,11 @@ import UIKit
 
 class ToDoTableView: UITableViewController {
     
-    
+//    var count = CoreDataManager.shared.userTodoFetch()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CoreDataManager.shared.userTodoFetch()
+    
+//       CoreDataManager.shared.userTodoFetch()
 
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
@@ -22,30 +22,31 @@ class ToDoTableView: UITableViewController {
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        
-        return 1
-    }
-
+//
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        
+//        
+//        return 3
+//    }
+//
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! ToDoTableViewCell
 //
-//        cell.textLabel?.text! = "hello"
+//        cell.textLabel?.text! = "rooooooo"
 //
 //        return cell
 //    }
-    
+//    
 
     /*
     // Override to support conditional editing of the table view.

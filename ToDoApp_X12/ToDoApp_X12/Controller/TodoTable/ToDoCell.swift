@@ -1,13 +1,13 @@
 //
-//  ToDoTableViewCell.swift
+//  ToDoCell.swift
 //  ToDoApp_X12
 //
-//  Created by Robin George on 05/10/21.
+//  Created by Robin George on 07/10/21.
 //
 
 import UIKit
 
-class ToDoTableViewCell: UITableViewCell {
+class ToDoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +19,5 @@ class ToDoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
