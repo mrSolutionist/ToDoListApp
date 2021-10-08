@@ -80,7 +80,6 @@
                     <navigationItem key="navigationItem" id="wnc-T2-u8a"/>
                     <connections>
                         <outlet property="passwordLabel" destination="ybX-XW-Wfz" id="mSV-gX-cAp"/>
-                        <outlet property="toDoLabel" destination="hXa-nw-rk8" id="WaP-sC-CdZ"/>
                         <outlet property="userNameLabel" destination="yND-Rt-9Rk" id="n6n-kM-H5K"/>
                     </connections>
                 </viewController>
@@ -294,7 +293,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="" id="xhi-MZ-6vu">
+                            <tableViewSection id="lwV-8y-CLY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="73" id="dOl-lR-boe" customClass="ToDoCell" customModule="ToDoApp_X12" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="73"/>
@@ -326,18 +325,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="" id="IWN-Yi-dho">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lqf-gm-jN4">
-                                        <rect key="frame" x="0.0" y="146.50000034679067" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lqf-gm-jN4" id="wWX-2M-dxP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="m9S-Z0-Frg" id="W5C-Va-5Kv"/>
@@ -359,7 +346,7 @@
         <!--To Do ContentVC-->
         <scene sceneID="K1h-PB-ttr">
             <objects>
-                <tableViewController id="FhE-Ik-lT7" customClass="ToDoContentVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ToDoContentId" id="FhE-Ik-lT7" customClass="ToDoContentVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="klk-S9-ykG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,11 +436,6 @@
             <point key="canvasLocation" x="592.75362318840587" y="-546.42857142857144"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="hXa-nw-rk8">
-            <size key="intrinsicContentSize" width="111" height="42"/>
-        </designable>
-    </designables>
     <resources>
         <image name="1965310" width="512" height="512"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>

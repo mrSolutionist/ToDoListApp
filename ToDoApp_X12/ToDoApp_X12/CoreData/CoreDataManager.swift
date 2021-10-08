@@ -63,7 +63,7 @@ class CoreDataManager{
         }
     }
     
-    //  data base functions //
+  //MARK: USER SAVING AND LOGIN FUNCTIONS
     
     //Saving userdata after signUp
     func saveUser(name:String, password:String, username: String) -> Bool{
@@ -137,10 +137,15 @@ class CoreDataManager{
         return false
     }
     
+    
+    
+//MARK: -ToDo Class functions
+    
     //user todo data fetch
     
     func userTodoFetch() -> Int  {
-        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) 
+        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult)
+        
         return todo.count
     }
     

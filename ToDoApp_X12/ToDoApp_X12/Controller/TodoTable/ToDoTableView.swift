@@ -32,30 +32,36 @@ class ToDoTableView: UITableViewController {
         
         self.navigationController?.pushViewController(todoContent, animated: true)
     }
-    //
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //
-    //        return 1
-    //    }
-    ////
-    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        // #warning Incomplete implementation, return the number of rows
-    //
-    //
-    //        return 2
-    //    }
-    ////
     
-    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! ToDoCell
-    //
-    //        cell.textLabel?.text! = "rooooooo"
-    //
-    //        return cell
-    //    }
-    ////
+        override func numberOfSections(in tableView: UITableView) -> Int {
+            // #warning Incomplete implementation, return the number of sections
     
+            return 1
+        }
+
+//        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            // #warning Incomplete implementation, return the number of rows
+//    //check if section
+//
+//            return 1
+//        }
+//
+//        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            //if indexpath.session = 0, populate array.
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_2", for: indexPath) as! ToDoCell
+//
+//            return cell
+//        }
+//
+//  //header
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! ToDoCell
+//           //add secton header
+//
+//                   return cell
+//    }
+//
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
