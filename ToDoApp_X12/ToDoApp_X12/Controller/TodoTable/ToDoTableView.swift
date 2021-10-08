@@ -28,16 +28,26 @@ class ToDoTableView: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todoContent = self.storyboard?.instantiateViewController(withIdentifier: "ToDoContentId") as! ToDoContentVC
         
-        self.navigationController?.pushViewController(todoContent, animated: true)
+        if indexPath.section == 0 {
+            let todoContent = self.storyboard?.instantiateViewController(withIdentifier: "ToDoContentId") as! ToDoContentVC
+            
+            self.navigationController?.pushViewController(todoContent, animated: true)
+        }
+        else
+        {
+            let todoContent = self.storyboard?.instantiateViewController(withIdentifier: "completedId") as! ToDoContentVC
+            
+            self.navigationController?.pushViewController(todoContent, animated: true)
+        }
+        
     }
     
-        override func numberOfSections(in tableView: UITableView) -> Int {
-            // #warning Incomplete implementation, return the number of sections
-    
-            return 1
-        }
+//        override func numberOfSections(in tableView: UITableView) -> Int {
+//            // #warning Incomplete implementation, return the number of sections
+//    
+//            return 2
+//        }
 
 //        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //            // #warning Incomplete implementation, return the number of rows

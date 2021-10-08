@@ -143,10 +143,10 @@ class CoreDataManager{
     
     //user todo data fetch
     
-    func userTodoFetch() -> Int  {
-        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult)
+    func userTodoFetch() -> [TodoData]  {
+        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) as? [TodoData]
         
-        return todo.count
+        return todo!
     }
     
     

@@ -118,6 +118,35 @@
             </objects>
             <point key="canvasLocation" x="1619" y="-546"/>
         </scene>
+        <!--To Do ContentVC-->
+        <scene sceneID="ZVI-2K-o5P">
+            <objects>
+                <tableViewController storyboardIdentifier="completedId" id="gmU-eT-uzl" customClass="ToDoContentVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5hy-E2-3M6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZLU-Ox-CCy">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZLU-Ox-CCy" id="dKi-ui-IgA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gmU-eT-uzl" id="9C3-ax-7Hc"/>
+                            <outlet property="delegate" destination="gmU-eT-uzl" id="0C0-jD-7f8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yeL-S9-0qf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfY-px-PMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2609" y="-769"/>
+        </scene>
         <!--User Tab Bar ControllerVC-->
         <scene sceneID="tbb-E3-fHD">
             <objects>
@@ -293,22 +322,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="lwV-8y-CLY">
+                            <tableViewSection headerTitle="Section-1" id="lwV-8y-CLY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="73" id="dOl-lR-boe" customClass="ToDoCell" customModule="ToDoApp_X12" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todo" rowHeight="73" id="dOl-lR-boe" customClass="ToDoCell" customModule="ToDoApp_X12" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOl-lR-boe" id="CQd-nq-prS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TO-DO LIST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-if-SMW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO-DO LIST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-if-SMW">
                                                     <rect key="frame" x="20" y="11" width="98.5" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dHm-0E-doh">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dHm-0E-doh">
                                                     <rect key="frame" x="352" y="26.5" width="42" height="20"/>
                                                 </imageView>
                                             </subviews>
@@ -320,6 +349,38 @@
                                                 <constraint firstItem="9GQ-if-SMW" firstAttribute="top" secondItem="CQd-nq-prS" secondAttribute="topMargin" id="oc9-fo-vON"/>
                                                 <constraint firstItem="dHm-0E-doh" firstAttribute="trailing" secondItem="CQd-nq-prS" secondAttribute="trailingMargin" id="ymd-cH-rt5"/>
                                                 <constraint firstItem="9GQ-if-SMW" firstAttribute="leading" secondItem="CQd-nq-prS" secondAttribute="leadingMargin" id="z45-3O-uNU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Section-2" id="gfE-G4-JuD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completed" rowHeight="73" id="yJe-CF-2KP" customClass="ToDoCell" customModule="ToDoApp_X12" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="146.50000034679067" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJe-CF-2KP" id="bSg-pe-xzF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="COMPLETED" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-ks-uww">
+                                                    <rect key="frame" x="20" y="11" width="121" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="a7T-J0-DdK">
+                                                    <rect key="frame" x="374.5" y="26.5" width="19.5" height="20"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a7T-J0-DdK" firstAttribute="leading" secondItem="Blx-ks-uww" secondAttribute="trailing" constant="233.5" id="DCW-Fd-PG2"/>
+                                                <constraint firstItem="Blx-ks-uww" firstAttribute="leading" secondItem="bSg-pe-xzF" secondAttribute="leadingMargin" id="FZG-3q-v3u"/>
+                                                <constraint firstItem="Blx-ks-uww" firstAttribute="bottom" secondItem="bSg-pe-xzF" secondAttribute="bottomMargin" id="I2q-Cg-8Th"/>
+                                                <constraint firstItem="a7T-J0-DdK" firstAttribute="trailing" secondItem="bSg-pe-xzF" secondAttribute="trailingMargin" id="MrO-ZU-ZzY"/>
+                                                <constraint firstItem="Blx-ks-uww" firstAttribute="top" secondItem="bSg-pe-xzF" secondAttribute="topMargin" id="dDf-73-HDd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a7T-J0-DdK" secondAttribute="bottom" constant="13" id="sJa-wL-DwW"/>
+                                                <constraint firstItem="a7T-J0-DdK" firstAttribute="top" secondItem="bSg-pe-xzF" secondAttribute="topMargin" constant="13" id="zrF-oX-7ec"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -338,6 +399,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="FhE-Ik-lT7" kind="show" id="maA-yb-AnG"/>
+                        <segue destination="gmU-eT-uzl" kind="show" id="5Tj-PF-Ih7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvP-c4-2jI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,10 +431,11 @@
                             <outlet property="delegate" destination="FhE-Ik-lT7" id="ibR-KL-i8o"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ci1-sg-2f8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XL9-3j-bW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2603" y="-1544"/>
+            <point key="canvasLocation" x="2610" y="-1478"/>
         </scene>
         <!--To Do Add View Controller-->
         <scene sceneID="0nR-L8-7mv">
