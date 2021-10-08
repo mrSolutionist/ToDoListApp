@@ -1,52 +1,47 @@
 //
-//  ToDoTableView.swift
+//  ToDoContentVC.swift
 //  ToDoApp_X12
 //
-//  Created by Robin George on 04/10/21.
+//  Created by Robin George on 08/10/21.
 //
 
 import UIKit
 
-class ToDoTableView: UITableViewController {
-    
-//    var count = CoreDataManager.shared.userTodoFetch()
+var toDoList : [TodoData]?
+
+class ToDoContentVC: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//       CoreDataManager.shared.userTodoFetch()
-
+        
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//         self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-
     // MARK: - Table view data source
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        
-//        
-//        return 3
-//    }
-//
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! ToDoTableViewCell
-//
-//        cell.textLabel?.text! = "rooooooo"
-//
-//        return cell
-//    }
-//    
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return toDoList?.count ?? 0
+    }
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

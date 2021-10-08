@@ -110,7 +110,7 @@ class CoreDataManager{
                     
                     let dbName = objectEntity.username!
                     let dbPassword = objectEntity.password!
-                    //left part is currently object and it wont equate with string, i guss!
+                   
                     if dbName  == name && dbPassword  == pass{
                    var defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
@@ -137,13 +137,18 @@ class CoreDataManager{
         return false
     }
     
+    //user todo data fetch
+    
     func userTodoFetch() -> Int  {
         let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) 
         return todo.count
     }
     
+    
+    //todo fetch
     func todoSave(title:String) -> Bool {
         let todoUser = TodoData(context: persistentContainer.viewContext)
+        print("repeat")
         todoUser.tiile = title
         do {
             try persistentContainer.viewContext.save()

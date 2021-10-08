@@ -17,6 +17,7 @@
 		BC140FB3270C7B71009BEFBB /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */; };
 		BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
+		BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */; };
 		BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF267E270A1797005514E4 /* ProfileViewController.swift */; };
 		BCCF2683270B48ED005514E4 /* ToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF2682270B48ED005514E4 /* ToDoTableView.swift */; };
 		BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE7F4FB27042755004662EF /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoAddViewController.swift; path = ToDoApp_X12/StoryBoard/ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoContentVC.swift; sourceTree = "<group>"; };
 		BCCF267E270A1797005514E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCCF2682270B48ED005514E4 /* ToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableView.swift; sourceTree = "<group>"; };
 		BCE7F4F827042755004662EF /* ToDoApp_X12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp_X12.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,8 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */,
+				BCCF2682270B48ED005514E4 /* ToDoTableView.swift */,
 				BC033A44270EE0A00092BA05 /* ToDoCell.swift */,
+				BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */,
 				BC033A45270EE0A00092BA05 /* ToDoCell.xib */,
+				BCCF267E270A1797005514E4 /* ProfileViewController.swift */,
+				BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */,
 			);
 			path = TodoTable;
 			sourceTree = "<group>";
@@ -151,11 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				BC033A49270EE1440092BA05 /* TodoTable */,
-				BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */,
 				BCE7F4FF27042755004662EF /* ViewController.swift */,
 				BC033A48270EE0BB0092BA05 /* mainController */,
-				BCCF2682270B48ED005514E4 /* ToDoTableView.swift */,
-				BCCF267E270A1797005514E4 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				BCE7F4FC27042755004662EF /* AppDelegate.swift in Sources */,
 				BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */,
 				BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */,
+				BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,
 				BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */,
 				BC033A46270EE0A00092BA05 /* ToDoCell.swift in Sources */,
