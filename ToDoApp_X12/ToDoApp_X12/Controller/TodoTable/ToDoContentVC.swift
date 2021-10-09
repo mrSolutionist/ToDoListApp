@@ -18,7 +18,7 @@ class ToDoContentVC: UITableViewController {
         //         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         toDoList = CoreDataManager.shared.userTodoFetch()
     }
@@ -29,6 +29,8 @@ class ToDoContentVC: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -42,6 +44,22 @@ class ToDoContentVC: UITableViewController {
         cell.textLabel?.text = toDoList?[indexPath.row].tiile
         
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let swipe = UIContextualAction(style: .destructive, title: "delete"){ []
+            (action,view,completionHandler) in
+            
+            //which item to remove
+            guard let itemToRemove = toDoList?[indexPath.row] else {return}//indexPath is the current row swipped
+            CoreDataManager.shared.delete(itemToRemove)
+            
+            //refresh
+            CoreDataManager.shared.userTodoFetch()
+        }
+        return UISwipeActionsConfiguration (actions: [swipe])
     }
     
     

@@ -68,6 +68,7 @@ class SignUpVC: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate =  self
         present(imagePicker, animated: true, completion: nil)
+       
     }
     
     
@@ -111,6 +112,7 @@ extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDel
         
         //passing image to profile
         profileImg.image = image
+        CoreDataManager.shared.imgSave(sampleImage: image)
     }
 }
 

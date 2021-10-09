@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 // MARK: - Core Data stack
 
@@ -63,7 +63,7 @@ class CoreDataManager{
         }
     }
     
-  //MARK: USER SAVING AND LOGIN FUNCTIONS
+    //MARK: USER SAVING AND LOGIN FUNCTIONS
     
     //Saving userdata after signUp
     func saveUser(name:String, password:String, username: String) -> Bool{
@@ -82,11 +82,13 @@ class CoreDataManager{
         return true
     }
     
+  
+    
     //login Validation Function
     
     func loginValidate(name:String,pass:String) -> Bool  {
         
-
+        
         //this converts the arg into predicate
         let username = NSPredicate(format: "username = %@",name)
         let password = NSPredicate(format: "password = %@", pass)
@@ -97,11 +99,11 @@ class CoreDataManager{
         //no idea what the following code does
         //mayb it uses username as predicate to search .
         userFetchRequest.predicate = username
-//        fetchRequest.predicate = password
+        //        fetchRequest.predicate = password
         
         do
             {
-               let result = try persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
+                let result = try persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
                 
                 if result.count>0
                 {
@@ -110,13 +112,13 @@ class CoreDataManager{
                     
                     let dbName = objectEntity.username!
                     let dbPassword = objectEntity.password!
-                   
+                    
                     if dbName  == name && dbPassword  == pass{
-                   var defaults = UserDefaults.standard
+                        var defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
-//                        defaults.set(objectEntity,forKey: "user")
+                        //                        defaults.set(objectEntity,forKey: "user")
                         
-                       
+                        
                         print("Login Succesfully")
                         return true
                     }
@@ -137,9 +139,33 @@ class CoreDataManager{
         return false
     }
     
+   
+    
+    //MARK: Image saving
+    
+    func imgSave(sampleImage: UIImage)  {
+        // convertion
+        let context = persistentContainer.viewContext
+        let jpegImageData = sampleImage.jpegData(compressionQuality: 1.0)
+        let pngImageData  = sampleImage.pngData()
+        
+        //saving
+        
+        let entityName =  NSEntityDescription.entity(forEntityName: "Your Entity Name", in: context)!
+        let image = NSManagedObject(entity: entityName, insertInto: context)
+        image.setValue(jpegImageData, forKeyPath: "Your Attribute Name")
+        do {
+            try context.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        
+    }
     
     
-//MARK: -ToDo Class functions
+    //MARK: -ToDo Class functions
     
     //user todo data fetch
     
@@ -159,13 +185,18 @@ class CoreDataManager{
             try persistentContainer.viewContext.save()
             return true
         } catch  {
-           return false
+            return false
         }
-      
         
+        
+        
+    }  //delete
+    func delete(_ list: TodoData ){
+        persistentContainer.viewContext.delete(list)
+        try! persistentContainer.viewContext.save()
         
     }
-  
+    
     
 }
 
