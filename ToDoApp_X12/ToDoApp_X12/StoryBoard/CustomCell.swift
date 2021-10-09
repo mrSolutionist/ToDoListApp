@@ -1,13 +1,13 @@
 //
-//  ToDoCell.swift
+//  CustomCell.swift
 //  ToDoApp_X12
 //
-//  Created by Robin George on 07/10/21.
+//  Created by Robin George on 09/10/21.
 //
 
 import UIKit
 
-class ToDoCell: UITableViewCell {
+class CustomCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +18,10 @@ class ToDoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
-    
     }
-   
     
+    func config()  {
+        
+    }
+
 }
-
-

@@ -7,10 +7,10 @@
 
 import UIKit
 
-var toDoList : [TodoData]?
+
 
 class ToDoContentVC: UITableViewController {
-    
+    var toDoList : [TodoData]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +39,7 @@ class ToDoContentVC: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! CustomCell
         
         cell.textLabel?.text = toDoList?[indexPath.row].tiile
         
@@ -49,15 +49,16 @@ class ToDoContentVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let swipe = UIContextualAction(style: .destructive, title: "delete"){ []
+        let swipe = UIContextualAction(style: .destructive, title: "delete"){ [unowned self]
             (action,view,completionHandler) in
             
             //which item to remove
-            guard let itemToRemove = toDoList?[indexPath.row] else {return}//indexPath is the current row swipped
+            guard let itemToRemove = self.toDoList?[indexPath.row] else {return}//indexPath is the current row swipped
             CoreDataManager.shared.delete(itemToRemove)
             
             //refresh
-            CoreDataManager.shared.userTodoFetch()
+//           CoreDataManager.shared.userTodoFetch()
+            tableView.reloadData()
         }
         return UISwipeActionsConfiguration (actions: [swipe])
     }

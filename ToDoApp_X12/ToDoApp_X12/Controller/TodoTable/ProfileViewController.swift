@@ -8,11 +8,15 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    var user : UserData?
+    @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Do any additional setup after loading the view.
+        
+        userNameLabel.text = user?.name
     }
     
     @IBAction func LogOutBtn(_ sender: Any) {
@@ -23,6 +27,8 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
+    
     
     
 }

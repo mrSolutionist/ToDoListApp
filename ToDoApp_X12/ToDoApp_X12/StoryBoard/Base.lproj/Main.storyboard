@@ -95,33 +95,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fk-kY-K39">
-                                <rect key="frame" x="176" y="397" width="62" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Y6-Y3-t2R">
+                                <rect key="frame" x="122" y="163" width="185" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDQ-2h-Moe">
+                                <rect key="frame" x="129" y="326" width="171" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6jS-yC-BAw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6jS-yC-BAw" firstAttribute="bottom" secondItem="bDQ-2h-Moe" secondAttribute="bottom" constant="425" id="7ka-D1-jQu"/>
+                            <constraint firstItem="3Y6-Y3-t2R" firstAttribute="leading" secondItem="6jS-yC-BAw" secondAttribute="leading" constant="122" id="Fty-8O-AmP"/>
+                            <constraint firstItem="6jS-yC-BAw" firstAttribute="trailing" secondItem="3Y6-Y3-t2R" secondAttribute="trailing" constant="107" id="O3f-eu-xXu"/>
+                            <constraint firstItem="6jS-yC-BAw" firstAttribute="trailing" secondItem="bDQ-2h-Moe" secondAttribute="trailing" constant="114" id="XOG-zW-0Ax"/>
+                            <constraint firstItem="bDQ-2h-Moe" firstAttribute="leading" secondItem="6jS-yC-BAw" secondAttribute="leading" constant="129" id="ZUA-ha-BzD"/>
+                            <constraint firstItem="6jS-yC-BAw" firstAttribute="bottom" secondItem="3Y6-Y3-t2R" secondAttribute="bottom" constant="522" id="hEu-uR-IMr"/>
+                            <constraint firstItem="bDQ-2h-Moe" firstAttribute="top" secondItem="3Y6-Y3-t2R" secondAttribute="bottom" constant="35" id="skO-nX-ldQ"/>
+                            <constraint firstItem="3Y6-Y3-t2R" firstAttribute="top" secondItem="6jS-yC-BAw" secondAttribute="top" constant="75" id="yrZ-Hd-3ft"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kHe-kq-boP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yQr-5I-gjw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4fk-kY-K39">
+                                <rect key="frame" x="332" y="7" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LOGOUT"/>
                                 <connections>
                                     <action selector="LogOutBtn:" destination="MQ7-Qg-XEp" eventType="touchUpInside" id="qnX-sK-g1I"/>
                                     <action selector="logout:" destination="ufW-Sz-tdy" eventType="touchUpInside" id="OwI-fZ-2tQ"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6jS-yC-BAw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4fk-kY-K39" firstAttribute="top" secondItem="6jS-yC-BAw" secondAttribute="top" constant="309" id="1bJ-9P-dwl"/>
-                            <constraint firstItem="4fk-kY-K39" firstAttribute="centerX" secondItem="WKl-c0-8jf" secondAttribute="centerX" id="JwX-Zu-IjO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="kHe-kq-boP"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="userNameLabel" destination="bDQ-2h-Moe" id="veg-aP-yMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctY-Fy-xae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ufW-Sz-tdy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1619" y="-546"/>
+            <point key="canvasLocation" x="1618.840579710145" y="-546.42857142857144"/>
         </scene>
-        <!--To Do ContentVC-->
+        <!--Table View Controller-->
         <scene sceneID="ZVI-2K-o5P">
             <objects>
-                <tableViewController storyboardIdentifier="completedId" id="gmU-eT-uzl" customClass="ToDoContentVC" customModule="ToDoApp_X12" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="completedId" id="gmU-eT-uzl" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5hy-E2-3M6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,13 +444,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="O10-uM-H7d" customClass="ToDoCell" customModule="ToDoApp_X12" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="O10-uM-H7d" customClass="CustomCell" customModule="ToDoApp_X12" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O10-uM-H7d" id="7DA-hY-PdD">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>

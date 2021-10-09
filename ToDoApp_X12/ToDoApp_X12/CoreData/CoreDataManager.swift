@@ -190,7 +190,8 @@ class CoreDataManager{
         
         
         
-    }  //delete
+    }
+    //delete
     func delete(_ list: TodoData ){
         persistentContainer.viewContext.delete(list)
         try! persistentContainer.viewContext.save()
