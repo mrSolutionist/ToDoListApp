@@ -14,6 +14,8 @@
 		BC140FB3270C7B71009BEFBB /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */; };
 		BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
+		BCC50946271403310021CCA3 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC50944271403310021CCA3 /* UserData+CoreDataProperties.swift */; };
+		BCC50947271403310021CCA3 /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC50945271403310021CCA3 /* TodoData+CoreDataProperties.swift */; };
 		BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */; };
 		BCC6B50727116CDE00566E81 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B50627116CDE00566E81 /* CustomCell.swift */; };
 		BCCF267F270A1797005514E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF267E270A1797005514E4 /* ProfileViewController.swift */; };
@@ -36,6 +38,8 @@
 		BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoAddViewController.swift; path = ToDoApp_X12/StoryBoard/ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BCC50944271403310021CCA3 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCC50945271403310021CCA3 /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoContentVC.swift; sourceTree = "<group>"; };
 		BCC6B50627116CDE00566E81 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ToDoApp_X12/StoryBoard/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		BCCF267E270A1797005514E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		BCE7F4EF27042755004662EF = {
 			isa = PBXGroup;
 			children = (
+				BCC50944271403310021CCA3 /* UserData+CoreDataProperties.swift */,
+				BCC50945271403310021CCA3 /* TodoData+CoreDataProperties.swift */,
 				BCE7F4FA27042755004662EF /* ToDoApp_X12 */,
 				BCE7F4F927042755004662EF /* Products */,
 				4D2B128C81564A848A8DA340 /* Frameworks */,
@@ -234,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC50946271403310021CCA3 /* UserData+CoreDataProperties.swift in Sources */,
 				BCE7F518270581AA004662EF /* CoreDataManager.swift in Sources */,
 				BC140FB0270C7B71009BEFBB /* UserData+CoreDataClass.swift in Sources */,
 				BC140FB2270C7B71009BEFBB /* TodoData+CoreDataClass.swift in Sources */,
@@ -250,6 +257,7 @@
 				BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,
 				BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */,
+				BCC50947271403310021CCA3 /* TodoData+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,16 +3,15 @@
     <entity name="TodoData" representedClassName=".TodoData" syncable="YES">
         <attribute name="discription" optional="YES" attributeType="String"/>
         <attribute name="tiile" optional="YES" attributeType="String"/>
-        <relationship name="todo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserData" inverseName="user" inverseEntity="UserData"/>
     </entity>
     <entity name="UserData" representedClassName=".UserData" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoData" inverseName="todo" inverseEntity="TodoData"/>
     </entity>
     <elements>
-        <element name="TodoData" positionX="-63" positionY="9" width="128" height="74"/>
-        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="103"/>
+        <element name="TodoData" positionX="-63" positionY="9" width="128" height="73"/>
+        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="89"/>
     </elements>
 </model>

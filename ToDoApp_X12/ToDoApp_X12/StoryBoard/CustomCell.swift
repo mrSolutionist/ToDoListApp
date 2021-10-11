@@ -20,7 +20,9 @@ class CustomCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config()  {
+    func config(cell:CustomCell , todo:TodoData)  {
+        cell.textLabel?.text =  todo.tiile
+        
         
     }
 

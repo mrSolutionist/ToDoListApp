@@ -143,25 +143,34 @@ class CoreDataManager{
     
     //MARK: Image saving
     
-    func imgSave(sampleImage: UIImage)  {
-        // convertion
-        let context = persistentContainer.viewContext
-        let jpegImageData = sampleImage.jpegData(compressionQuality: 1.0)
-        let pngImageData  = sampleImage.pngData()
+    func saveImage(data: Data) {
+    let context = persistentContainer.viewContext
+    let imageInstance = UserData(context: context)
+    imageInstance.image = data
+    do {
+    try context.save()
         
-        //saving
-        
-        let entityName =  NSEntityDescription.entity(forEntityName: "Your Entity Name", in: context)!
-        let image = NSManagedObject(entity: entityName, insertInto: context)
-        image.setValue(jpegImageData, forKeyPath: "Your Attribute Name")
-        do {
-            try context.save()
-            
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-        
-        
+        //fetching test
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
+        let fetchingImage = try context.fetch(fetchRequest) as! [UserData]
+    print("Image is saved")
+    } catch {
+    print(error.localizedDescription)
+          }
+      
+    }
+    
+    //retriving image
+    func fetchImage() -> [UserData] {
+    let context = persistentContainer.viewContext
+    var fetchingImage = [UserData]()
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
+    do {
+    fetchingImage = try context.fetch(fetchRequest) as! [UserData]
+    } catch {
+    print("Error while fetching the image")
+    }
+    return fetchingImage
     }
     
     

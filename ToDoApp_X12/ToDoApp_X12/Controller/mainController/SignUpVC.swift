@@ -46,6 +46,10 @@ class SignUpVC: UIViewController {
         let username = userNameField.text!
         print(name,password,username)
         
+        if let imageData = profileImg.image?.pngData() {
+            CoreDataManager.shared.saveImage(data: imageData)
+            
+        }
         //condition check and save
         if !notEmpty() && (passwordField.text == rePasswordField.text){
             print("hello")
@@ -62,13 +66,14 @@ class SignUpVC: UIViewController {
     
     
     
+    
     // clik on image to move to cam view conroller
     @IBAction func profileImageBtn(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate =  self
         present(imagePicker, animated: true, completion: nil)
-       
+        
     }
     
     
@@ -84,15 +89,15 @@ class SignUpVC: UIViewController {
     
     //pop to previous vc
     func exit()  {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
     
     
-  
     
-   
+    
+    
 }
 
 extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDelegate{
@@ -112,7 +117,7 @@ extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDel
         
         //passing image to profile
         profileImg.image = image
-        CoreDataManager.shared.imgSave(sampleImage: image)
+        
     }
 }
 

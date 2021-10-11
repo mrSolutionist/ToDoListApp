@@ -9,12 +9,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     var user : UserData?
+    @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // Do any additional setup after loading the view.
+       
+        let arr = CoreDataManager.shared.fetchImage()
+        ProfileImage.image = UIImage(data: arr[0].image!)
         
         userNameLabel.text = user?.name
     }
@@ -27,6 +30,8 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
+  
     
     
     

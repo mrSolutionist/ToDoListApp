@@ -2,7 +2,7 @@
 //  UserData+CoreDataProperties.swift
 //  ToDoApp_X12
 //
-//  Created by Robin George on 05/10/21.
+//  Created by Robin George on 11/10/21.
 //
 //
 
@@ -19,7 +19,7 @@ extension UserData {
     @NSManaged public var name: String?
     @NSManaged public var password: String?
     @NSManaged public var username: String?
-    @NSManaged public var user: TodoData?
+    @NSManaged public var image: Data?
 
 }
 
