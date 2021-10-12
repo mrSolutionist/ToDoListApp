@@ -8,18 +8,24 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+   
     var user : UserData?
     @IBOutlet weak var ProfileImage: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
+    
+    @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     
        
-        let arr = CoreDataManager.shared.fetchImage()
-        ProfileImage.image = UIImage(data: arr[0].image!)
+        let user = CoreDataManager.shared.userFetch()
+//        ProfileImage.image = UIImage(data: user[0].image!)
         
-        userNameLabel.text = user?.name
+        
+        nameLabel.text = user.name
+        usernameLabel.text = user.username
+        
     }
     
     @IBAction func LogOutBtn(_ sender: Any) {

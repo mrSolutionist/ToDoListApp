@@ -15,11 +15,13 @@ import UIKit
 class CoreDataManager{
     let userFetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
     let userTodoFetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoData")
-    //    let context = CoreDataManager.shared
+    var objectEntity : UserData?
+    
     static let shared = CoreDataManager()
+    
     private init(){
-        print("hi")
     }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -108,10 +110,10 @@ class CoreDataManager{
                 if result.count>0
                 {
                     
-                    let objectEntity = result.firstObject as! UserData
+                    objectEntity = result.firstObject as! UserData
                     
-                    let dbName = objectEntity.username!
-                    let dbPassword = objectEntity.password!
+                    let dbName = objectEntity!.username!
+                    let dbPassword = objectEntity!.password!
                     
                     if dbName  == name && dbPassword  == pass{
                         var defaults = UserDefaults.standard
@@ -160,17 +162,9 @@ class CoreDataManager{
       
     }
     
-    //retriving image
-    func fetchImage() -> [UserData] {
-    let context = persistentContainer.viewContext
-    var fetchingImage = [UserData]()
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
-    do {
-    fetchingImage = try context.fetch(fetchRequest) as! [UserData]
-    } catch {
-    print("Error while fetching the image")
-    }
-    return fetchingImage
+    //fetch user
+    func userFetch() -> UserData {
+        return objectEntity!
     }
     
     

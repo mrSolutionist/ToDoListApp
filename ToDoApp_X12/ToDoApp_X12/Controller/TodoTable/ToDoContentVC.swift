@@ -12,7 +12,7 @@ import UIKit
 class ToDoContentVC: UITableViewController {
     
     var toDoList : [TodoData]?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,6 +67,8 @@ class ToDoContentVC: UITableViewController {
         }
         return UISwipeActionsConfiguration (actions: [swipe])
     }
+    
+    
     
     
     /*
