@@ -26,3 +26,11 @@ extension UserData {
 extension UserData : Identifiable {
 
 }
+
+extension UserData : Encodable{
+    public func encode(to encoder: Encoder) throws {
+        
+    }
+    
+    
+}

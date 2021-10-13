@@ -123,12 +123,17 @@ class CoreDataManager{
                     
                     objectEntity = result.firstObject as? UserData
                     
+                    let encoder = JSONEncoder()
+                    let userObject = try encoder.encode(objectEntity)
+                    
+                    
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
                     
                     if dbName  == name && dbPassword  == pass{
                         let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
+                        defaults.set(userObject, forKey: "userObject")
                         //                        defaults.set(objectEntity,forKey: "user")
                         
                         
