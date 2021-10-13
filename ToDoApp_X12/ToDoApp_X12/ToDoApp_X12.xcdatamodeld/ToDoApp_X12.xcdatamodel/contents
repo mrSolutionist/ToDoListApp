@@ -5,7 +5,7 @@
         <attribute name="tiile" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserData" representedClassName=".UserData" syncable="YES">
-        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="image" optional="YES" attributeType="URI"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>

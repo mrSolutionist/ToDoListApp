@@ -68,12 +68,14 @@ class CoreDataManager{
     //MARK: USER SAVING AND LOGIN FUNCTIONS
     
     //Saving userdata after signUp
-    func saveUser(name:String, password:String, username: String) -> Bool{
+    func saveUser(name:String, password:String, username: String , data:Data) -> Bool{
         
         let userData = UserData(context:persistentContainer.viewContext)
         userData.name = name
         userData.password = password
         userData.username = username
+        let url = imageSavefunc(data: data)
+        userData.image = url
         do {
             try persistentContainer.viewContext.save()
         } catch  {
@@ -84,7 +86,32 @@ class CoreDataManager{
         return true
     }
     
-  
+    //image url to  dict save
+    func imageSavefunc(data:Data) -> URL{
+        //getting url path from doc to where to save
+        
+        //[0] url returns an array of objects of path, but since it has only one element, [0]
+        let doc = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        //  setting image name
+        let url = doc.appendingPathComponent("proImage.png")
+        
+        do {
+            try data.write(to: url)
+            return url
+        } catch  {
+            
+        }
+        //what to do if i dont have to return anything?
+        return url
+        
+        
+        
+        
+        
+        
+    }
+    
     
     //login Validation Function
     
@@ -93,7 +120,7 @@ class CoreDataManager{
         
         //this converts the arg into predicate
         let username = NSPredicate(format: "username = %@",name)
-        let password = NSPredicate(format: "password = %@", pass)
+//        let password = NSPredicate(format: "password = %@", pass)
         
         //
         
@@ -110,13 +137,13 @@ class CoreDataManager{
                 if result.count>0
                 {
                     
-                    objectEntity = result.firstObject as! UserData
+                    objectEntity = (result.firstObject as! UserData)
                     
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
                     
                     if dbName  == name && dbPassword  == pass{
-                        var defaults = UserDefaults.standard
+                        let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
                         //                        defaults.set(objectEntity,forKey: "user")
                         
@@ -141,26 +168,26 @@ class CoreDataManager{
         return false
     }
     
-   
+    
     
     //MARK: Image saving
     
-    func saveImage(data: Data) {
-    let context = persistentContainer.viewContext
-    let imageInstance = UserData(context: context)
-    imageInstance.image = data
-    do {
-    try context.save()
-        
-        //fetching test
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
-        let fetchingImage = try context.fetch(fetchRequest) as! [UserData]
-    print("Image is saved")
-    } catch {
-    print(error.localizedDescription)
-          }
-      
-    }
+    //    func saveImage(data: Data) {
+    //    let context = persistentContainer.viewContext
+    //    let imageInstance = UserData(context: context)
+    //    imageInstance.image = data
+    //    do {
+    //    try context.save()
+    //
+    //        //fetching test
+    //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
+    //        let fetchingImage = try context.fetch(fetchRequest) as! [UserData]
+    //    print("Image is saved")
+    //    } catch {
+    //    print(error.localizedDescription)
+    //          }
+    //
+    //    }
     
     //fetch user
     func userFetch() -> UserData {
@@ -200,6 +227,8 @@ class CoreDataManager{
         try! persistentContainer.viewContext.save()
         
     }
+    // test image function
+    
     
     
 }

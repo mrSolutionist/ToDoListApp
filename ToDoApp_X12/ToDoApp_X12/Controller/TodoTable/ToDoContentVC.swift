@@ -43,7 +43,7 @@ class ToDoContentVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! CustomCell
         
-//        cell.textLabel?.text = toDoList?[indexPath.row].tiile
+
         
         cell.config(cell:cell, todo:toDoList![indexPath.row])
        

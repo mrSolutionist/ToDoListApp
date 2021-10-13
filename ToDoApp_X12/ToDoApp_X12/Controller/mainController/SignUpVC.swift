@@ -46,15 +46,17 @@ class SignUpVC: UIViewController {
         let username = userNameField.text!
         print(name,password,username)
         
-        if let imageData = profileImg.image?.pngData() {
-            CoreDataManager.shared.saveImage(data: imageData)
-            
-        }
+        
         //condition check and save
         if !notEmpty() && (passwordField.text == rePasswordField.text){
-            print("hello")
-            let cor = CoreDataManager.shared
-            let save = cor.saveUser(name: name, password: password, username: username)
+            
+            // image taken is converted to binary, png
+            let imageData = profileImg.image?.pngData()
+            
+            //saving func called in core data
+            let save = CoreDataManager.shared.saveUser(name: name, password: password, username: username,data: imageData!)
+            
+            //if save retuen true
             if save {
                 let alert =  UIAlertController(title: "Saved", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler:{action in self.exit()
@@ -99,7 +101,7 @@ class SignUpVC: UIViewController {
     
     
 }
-
+// confirming deligate of imagePicker
 extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     //deligates of imagePickerController
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -110,7 +112,7 @@ extension SignUpVC : UIImagePickerControllerDelegate & UINavigationControllerDel
         picker.dismiss(animated: true, completion: nil)
         guard let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             
-            return
+            return 
         }
         
         
