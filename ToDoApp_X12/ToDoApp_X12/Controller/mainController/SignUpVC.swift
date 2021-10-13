@@ -46,15 +46,12 @@ class SignUpVC: UIViewController {
         let username = userNameField.text!
         print(name,password,username)
         
-        if let imageData = profileImg.image?.pngData() {
-            CoreDataManager.shared.saveImage(data: imageData)
-            
-        }
+      
         //condition check and save
         if !notEmpty() && (passwordField.text == rePasswordField.text){
-            print("hello")
-            let cor = CoreDataManager.shared
-            let save = cor.saveUser(name: name, password: password, username: username)
+    
+            let imageData = profileImg.image?.pngData()
+            let save = CoreDataManager.shared.saveUser(name: name, password: password, username: username, image: imageData!)
             if save {
                 let alert =  UIAlertController(title: "Saved", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler:{action in self.exit()

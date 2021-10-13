@@ -68,12 +68,13 @@ class CoreDataManager{
     //MARK: USER SAVING AND LOGIN FUNCTIONS
     
     //Saving userdata after signUp
-    func saveUser(name:String, password:String, username: String) -> Bool{
+    func saveUser(name:String, password:String, username: String , image:Data) -> Bool{
         
         let userData = UserData(context:persistentContainer.viewContext)
         userData.name = name
         userData.password = password
         userData.username = username
+        userData.image = image
         do {
             try persistentContainer.viewContext.save()
         } catch  {
@@ -84,6 +85,16 @@ class CoreDataManager{
         return true
     }
     
+    
+    //MARK: Image saving
+    
+// po 
+    
+    //fetch user
+    func userFetch() -> UserData {
+        
+        return objectEntity!
+    }
   
     
     //login Validation Function
@@ -110,13 +121,13 @@ class CoreDataManager{
                 if result.count>0
                 {
                     
-                    objectEntity = result.firstObject as! UserData
+                    objectEntity = result.firstObject as? UserData
                     
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
                     
                     if dbName  == name && dbPassword  == pass{
-                        var defaults = UserDefaults.standard
+                        let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
                         //                        defaults.set(objectEntity,forKey: "user")
                         
@@ -142,30 +153,7 @@ class CoreDataManager{
     }
     
    
-    
-    //MARK: Image saving
-    
-    func saveImage(data: Data) {
-    let context = persistentContainer.viewContext
-    let imageInstance = UserData(context: context)
-    imageInstance.image = data
-    do {
-    try context.save()
-        
-        //fetching test
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
-        let fetchingImage = try context.fetch(fetchRequest) as! [UserData]
-    print("Image is saved")
-    } catch {
-    print(error.localizedDescription)
-          }
-      
-    }
-    
-    //fetch user
-    func userFetch() -> UserData {
-        return objectEntity!
-    }
+   
     
     
     //MARK: -ToDo Class functions

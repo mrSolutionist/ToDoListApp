@@ -20,12 +20,12 @@ class ProfileViewController: UIViewController {
     
        
         let user = CoreDataManager.shared.userFetch()
-//        ProfileImage.image = UIImage(data: user[0].image!)
-        
+        ProfileImage.image = UIImage(data: user.image!)
+
         
         nameLabel.text = user.name
         usernameLabel.text = user.username
-        
+
     }
     
     @IBAction func LogOutBtn(_ sender: Any) {
