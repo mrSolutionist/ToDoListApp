@@ -11,7 +11,7 @@ import UIKit
 class ToDoContentVC: UITableViewController {
     
     var toDoList : [TodoData]?
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         todoOnLoad()
@@ -19,7 +19,7 @@ class ToDoContentVC: UITableViewController {
         //         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         toDoList = CoreDataManager.shared.userTodoFetch()
     }
@@ -31,6 +31,8 @@ class ToDoContentVC: UITableViewController {
         return 2
     }
     
+    
+    //header for sections
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  title = UILabel()
         if section == 0 {
@@ -50,27 +52,27 @@ class ToDoContentVC: UITableViewController {
         else {
             return completedArray.count
         }
-     
+        
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! CustomCell
         
-
         
-//        cell.config(cell:cell, todo:toDoList![indexPath.row])
+     //adding the content as per status of content to the respective sections
         if indexPath.section == 0{
             cell.config(cell:cell, todo:todoArray[indexPath.row])
         }
         else if indexPath.section == 1{
             cell.config(cell:cell, todo:completedArray[indexPath.row])
         }
-
+        
         return cell
     }
     
     
+    //deleting swipe
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let swipe = UIContextualAction(style: .destructive, title: "delete"){ [weak self]
@@ -81,24 +83,39 @@ class ToDoContentVC: UITableViewController {
             CoreDataManager.shared.delete(itemToRemove)
             
             //refresh
-//           CoreDataManager.shared.userTodoFetch()
+            //           CoreDataManager.shared.userTodoFetch()
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration (actions: [swipe])
     }
     
+    
+    // select action
+    // for checkMark
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       if  tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-        toDoList?[indexPath.row].status = true
-        tableView.reloadData()
         
+        //checking for checkmark
+        if  tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+            
+            //removing checkmark
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            
+            //changing the state
+            toDoList?[indexPath.row].status = false
+            
+            tableView.reloadData()
+            
         }
-       else {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-        toDoList?[indexPath.row].status = false
-        tableView.reloadData()
-       }
+        else
+        {
+            //adding checkMArk
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            
+            //changing the state
+            toDoList?[indexPath.row].status = true
+            
+            tableView.reloadData()
+        }
     }
     
     

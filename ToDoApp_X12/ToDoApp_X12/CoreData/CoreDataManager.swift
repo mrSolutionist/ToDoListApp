@@ -120,15 +120,12 @@ class CoreDataManager{
         
         //this converts the arg into predicate
         let username = NSPredicate(format: "username = %@",name)
-//        let password = NSPredicate(format: "password = %@", pass)
-        
-        //
         
         
         //no idea what the following code does
         //mayb it uses username as predicate to search .
         userFetchRequest.predicate = username
-        //        fetchRequest.predicate = password
+        
         
         do
             {
@@ -145,9 +142,7 @@ class CoreDataManager{
                     if dbName  == name && dbPassword  == pass{
                         let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
-                        //                        defaults.set(objectEntity,forKey: "user")
-                        
-                        
+                    
                         print("Login Succesfully")
                         return true
                     }
@@ -207,21 +202,26 @@ class CoreDataManager{
     
     
     //todo fetch
-    func todoSave(title:String) -> Bool {
+    func todoSave(title:String ,status:Bool) -> Bool {
         let todoUser = TodoData(context: persistentContainer.viewContext)
-        print("repeat")
+        
         todoUser.tiile = title
-        todoUser.status = true
+        todoUser.status = status
+        
         do {
             try persistentContainer.viewContext.save()
             return true
-        } catch  {
+            
+        }
+        catch
+        {
             return false
         }
         
         
         
     }
+    
     //delete
     func delete(_ list: TodoData ){
         persistentContainer.viewContext.delete(list)
