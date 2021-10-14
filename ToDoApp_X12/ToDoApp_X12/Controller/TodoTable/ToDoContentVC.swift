@@ -10,6 +10,7 @@ import UIKit
 
 class ToDoContentVC: UITableViewController {
     
+    
     var toDoList : [TodoData]?
     
     override func viewDidLoad() {
@@ -92,6 +93,8 @@ class ToDoContentVC: UITableViewController {
     
     // select action
     // for checkMark
+    
+ 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //checking for checkmark
@@ -102,8 +105,7 @@ class ToDoContentVC: UITableViewController {
             
             //changing the state
             toDoList?[indexPath.row].status = false
-            
-            tableView.reloadData()
+            tableView.reloadRows(at: [indexPath], with: .bottom)
             
         }
         else
@@ -114,7 +116,9 @@ class ToDoContentVC: UITableViewController {
             //changing the state
             toDoList?[indexPath.row].status = true
             
-            tableView.reloadData()
+            tableView.reloadRows(at: [indexPath], with: .bottom)
+         
+            
         }
     }
     
