@@ -8,14 +8,13 @@
 import UIKit
 
 
-
 class ToDoContentVC: UITableViewController {
     
     var toDoList : [TodoData]?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        todoOnLoad()
         // Uncomment the following line to preserve selection between presentations
         //         self.clearsSelectionOnViewWillAppear = false
         
@@ -29,14 +28,29 @@ class ToDoContentVC: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
-    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  title = UILabel()
+        if section == 0 {
+            title.text = "TO-DO"
+        }
+        else {
+            title.text = "COMPLETED"
+        }
+        return title
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return toDoList?.count ?? 0
+        if section == 0 {
+            return todoArray.count
+        }
+        else {
+            return completedArray.count
+        }
+     
     }
     
     
@@ -45,8 +59,13 @@ class ToDoContentVC: UITableViewController {
         
 
         
-        cell.config(cell:cell, todo:toDoList![indexPath.row])
-       
+//        cell.config(cell:cell, todo:toDoList![indexPath.row])
+        if indexPath.section == 0{
+            cell.config(cell:cell, todo:todoArray[indexPath.row])
+        }
+        else if indexPath.section == 1{
+            cell.config(cell:cell, todo:completedArray[indexPath.row])
+        }
 
         return cell
     }
@@ -54,11 +73,11 @@ class ToDoContentVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let swipe = UIContextualAction(style: .destructive, title: "delete"){ [unowned self]
+        let swipe = UIContextualAction(style: .destructive, title: "delete"){ [weak self]
             (action,view,completionHandler) in
             
             //which item to remove
-            guard let itemToRemove = self.toDoList?.remove(at: indexPath.row) else {return}//indexPath is the current row swipped
+            guard let itemToRemove = self?.toDoList?[indexPath.row] else {return}//indexPath is the current row swipped
             CoreDataManager.shared.delete(itemToRemove)
             
             //refresh
@@ -68,6 +87,19 @@ class ToDoContentVC: UITableViewController {
         return UISwipeActionsConfiguration (actions: [swipe])
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       if  tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        toDoList?[indexPath.row].status = true
+        tableView.reloadData()
+        
+        }
+       else {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        toDoList?[indexPath.row].status = false
+        tableView.reloadData()
+       }
+    }
     
     
     

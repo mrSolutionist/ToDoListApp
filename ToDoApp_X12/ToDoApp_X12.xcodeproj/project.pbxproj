@@ -14,6 +14,7 @@
 		BC140FB3270C7B71009BEFBB /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */; };
 		BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
+		BCBF172A2717EEB1002E14E1 /* ToDoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBF17292717EEB1002E14E1 /* ToDoArray.swift */; };
 		BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */; };
 		BCC6B50727116CDE00566E81 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6B50627116CDE00566E81 /* CustomCell.swift */; };
 		BCC9C7412716FDFB00A484EF /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC9C73F2716FDFB00A484EF /* TodoData+CoreDataProperties.swift */; };
@@ -38,6 +39,7 @@
 		BC140FAF270C7B71009BEFBB /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoAddViewController.swift; path = ToDoApp_X12/StoryBoard/ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BCBF17292717EEB1002E14E1 /* ToDoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoArray.swift; path = ToDoApp_X12/Controller/TodoTable/ToDoArray.swift; sourceTree = SOURCE_ROOT; };
 		BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoContentVC.swift; sourceTree = "<group>"; };
 		BCC6B50627116CDE00566E81 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ToDoApp_X12/StoryBoard/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		BCC9C73F2716FDFB00A484EF /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		BCE7F51927058FDD004662EF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BCBF17292717EEB1002E14E1 /* ToDoArray.swift */,
 				BC140FAC270C7B71009BEFBB /* UserData+CoreDataClass.swift */,
 				BC140FAD270C7B71009BEFBB /* UserData+CoreDataProperties.swift */,
 				BC140FAE270C7B71009BEFBB /* TodoData+CoreDataClass.swift */,
@@ -257,6 +260,7 @@
 				BC037C5E270845B300CF3457 /* UserTabBarControllerVC.swift in Sources */,
 				BCC6B4FD2710124E00566E81 /* ToDoContentVC.swift in Sources */,
 				BCE7F51627043964004662EF /* SignUpVC.swift in Sources */,
+				BCBF172A2717EEB1002E14E1 /* ToDoArray.swift in Sources */,
 				BCE7F4FE27042755004662EF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

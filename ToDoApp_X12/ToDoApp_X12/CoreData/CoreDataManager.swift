@@ -211,6 +211,7 @@ class CoreDataManager{
         let todoUser = TodoData(context: persistentContainer.viewContext)
         print("repeat")
         todoUser.tiile = title
+        todoUser.status = true
         do {
             try persistentContainer.viewContext.save()
             return true

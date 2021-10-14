@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+ 
         
         //checking for is user is logged in via UserDefault status
         if UserDefaults.standard.bool(forKey: "UserLoggedIn") == true {

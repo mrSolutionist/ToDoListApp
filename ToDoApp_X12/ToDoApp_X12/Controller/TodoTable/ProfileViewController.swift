@@ -19,14 +19,14 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
     
        
-        let user = CoreDataManager.shared.userFetch()
-        
-        let data =  try! Data(contentsOf: user.image! )
-        ProfileImage.image = UIImage(data: data)
-
-
-        nameLabel.text = user.name
-        usernameLabel.text = user.username
+//        let user = CoreDataManager.shared.userFetch()
+//        
+//        let data =  try! Data(contentsOf: user.image! )
+//        ProfileImage.image = UIImage(data: data)
+//
+//
+//        nameLabel.text = user.name
+//        usernameLabel.text = user.username
         
     }
     

@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TodoData" representedClassName=".TodoData" syncable="YES">
         <attribute name="discription" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="tiile" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserData" representedClassName=".UserData" syncable="YES">
@@ -11,7 +12,7 @@
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TodoData" positionX="-63" positionY="9" width="128" height="73"/>
+        <element name="TodoData" positionX="-63" positionY="9" width="128" height="74"/>
         <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="89"/>
     </elements>
 </model>
