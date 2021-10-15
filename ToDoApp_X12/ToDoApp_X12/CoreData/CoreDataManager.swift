@@ -22,32 +22,24 @@ class CoreDataManager{
     private init(){
     }
     
+    
+    
     lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-         */
+       
         let container = NSPersistentContainer(name: "ToDoApp_X12")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
+               
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
+    
+    
+    
+    
+    
     
     // MARK: - Core Data Saving support
     
@@ -57,13 +49,14 @@ class CoreDataManager{
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
+    
+    
     
     //MARK: USER SAVING AND LOGIN FUNCTIONS
     
@@ -120,11 +113,13 @@ class CoreDataManager{
         
         //this converts the arg into predicate
         let username = NSPredicate(format: "username = %@",name)
+        let password = NSPredicate(format: "password = %@",pass)
         
         
         //no idea what the following code does
         //mayb it uses username as predicate to search .
         userFetchRequest.predicate = username
+        userFetchRequest.predicate = password
         
         
         do
@@ -134,14 +129,18 @@ class CoreDataManager{
                 if result.count>0
                 {
                     
-                    objectEntity = (result.firstObject as! UserData)
+                    objectEntity = result.firstObject as? UserData
                     
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
+                    let userIdHashValue = objectEntity!.id.hashValue
                     
                     if dbName  == name && dbPassword  == pass{
                         let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
+                        defaults.set(userIdHashValue, forKey: "userId")
+                        
+                        
                     
                         print("Login Succesfully")
                         return true
@@ -164,28 +163,12 @@ class CoreDataManager{
     }
     
     
-    
-    //MARK: Image saving
-    
-    //    func saveImage(data: Data) {
-    //    let context = persistentContainer.viewContext
-    //    let imageInstance = UserData(context: context)
-    //    imageInstance.image = data
-    //    do {
-    //    try context.save()
-    //
-    //        //fetching test
-    //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
-    //        let fetchingImage = try context.fetch(fetchRequest) as! [UserData]
-    //    print("Image is saved")
-    //    } catch {
-    //    print(error.localizedDescription)
-    //          }
-    //
-    //    }
+  
     
     //fetch user
     func userFetch() -> UserData {
+        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
+        objectEntity = (result.firstObject as! UserData)
         return objectEntity!
     }
     

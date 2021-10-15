@@ -105,7 +105,8 @@ class ToDoContentVC: UITableViewController {
             
             //changing the state
             toDoList?[indexPath.row].status = false
-            tableView.reloadRows(at: [indexPath], with: .bottom)
+            
+            tableView.reloadRows(at: [indexPath], with: .top)
             
         }
         else
@@ -113,6 +114,7 @@ class ToDoContentVC: UITableViewController {
             //adding checkMArk
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             
+     
             //changing the state
             toDoList?[indexPath.row].status = true
             

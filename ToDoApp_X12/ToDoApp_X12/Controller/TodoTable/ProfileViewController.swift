@@ -18,15 +18,16 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-       
-//        let user = CoreDataManager.shared.userFetch()
-//        
+
+        let users = CoreDataManager.shared.userFetch()
+        let userId =  UserDefaults.standard.integer(forKey: "userId")
+        let currentUser = getUser(users: [users], userId: userId)
 //        let data =  try! Data(contentsOf: user.image! )
-//        ProfileImage.image = UIImage(data: data)
-//
-//
-//        nameLabel.text = user.name
-//        usernameLabel.text = user.username
+//        ProfileImage.image = UIImage(data:data)
+
+
+        nameLabel.text = currentUser.name
+        usernameLabel.text = currentUser.username
         
     }
     
@@ -40,7 +41,23 @@ class ProfileViewController: UIViewController {
     }
     
   
-    
+    func getUser(users:[UserData],userId:Int) -> UserData{
+        
+        for user in users{
+            
+            if user.id.hashValue == userId
+            {
+                return user
+            }
+            
+            else {
+                
+            }
+           
+        }
+        var emptyObj = UserData()
+        return emptyObj
+    }
     
     
     
