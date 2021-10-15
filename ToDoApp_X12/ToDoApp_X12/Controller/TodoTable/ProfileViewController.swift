@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
         
         for user in users{
             
-            if user.id.hashValue == userId
+            if user.hashValue == userId
             {
                 return user
             }

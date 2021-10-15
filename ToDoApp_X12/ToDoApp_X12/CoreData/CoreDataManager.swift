@@ -133,7 +133,7 @@ class CoreDataManager{
                     
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
-                    let userIdHashValue = objectEntity!.id.hashValue
+                    let userIdHashValue = objectEntity!.hashValue
                     
                     if dbName  == name && dbPassword  == pass{
                         let defaults = UserDefaults.standard
