@@ -25,11 +25,11 @@ class CoreDataManager{
     
     
     lazy var persistentContainer: NSPersistentContainer = {
-       
+        
         let container = NSPersistentContainer(name: "ToDoApp_X12")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-               
+                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -141,7 +141,7 @@ class CoreDataManager{
                         defaults.set(userIdHashValue, forKey: "userId")
                         
                         
-                    
+                        
                         print("Login Succesfully")
                         return true
                     }
@@ -163,7 +163,7 @@ class CoreDataManager{
     }
     
     
-  
+    
     
     //fetch user
     func userFetch() -> UserData {

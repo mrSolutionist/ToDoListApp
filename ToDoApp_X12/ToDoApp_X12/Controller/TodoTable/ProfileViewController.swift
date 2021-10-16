@@ -22,8 +22,8 @@ class ProfileViewController: UIViewController {
         let users = CoreDataManager.shared.userFetch()
         let userId =  UserDefaults.standard.integer(forKey: "userId")
         let currentUser = getUser(users: [users], userId: userId)
-//        let data =  try! Data(contentsOf: user.image! )
-//        ProfileImage.image = UIImage(data:data)
+        let data =  try! Data(contentsOf: currentUser.image! )
+        ProfileImage.image = UIImage(data:data)
 
 
         nameLabel.text = currentUser.name
