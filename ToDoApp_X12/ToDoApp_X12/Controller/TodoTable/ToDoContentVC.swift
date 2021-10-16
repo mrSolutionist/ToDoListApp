@@ -11,18 +11,37 @@ import UIKit
 class ToDoContentVC: UITableViewController {
     
     
+    var todoArray : [TodoData] = []
+    var completedArray : [TodoData] = []
     var toDoList : [TodoData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         todoOnLoad()
-        // Uncomment the following line to preserve selection between presentations
-        //         self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
         toDoList = CoreDataManager.shared.userTodoFetch()
+    }
+    
+    func todoOnLoad(){
+      let todoList = CoreDataManager.shared.userTodoFetch()
+        
+        completedArray.removeAll()
+        todoArray.removeAll()
+        
+        
+        todoList.forEach { todo  in
+            if todo.status{
+                completedArray.append(todo)
+            }
+            else if !todo.status {
+                todoArray.append(todo)
+            }
+        }
+
+
+
+
     }
     
     // MARK: - Table view data source
@@ -106,7 +125,7 @@ class ToDoContentVC: UITableViewController {
             //changing the state
             toDoList?[indexPath.row].status = false
             
-            tableView.reloadRows(at: [indexPath], with: .top)
+            
             
         }
         else
@@ -118,10 +137,8 @@ class ToDoContentVC: UITableViewController {
             //changing the state
             toDoList?[indexPath.row].status = true
             
-            tableView.reloadRows(at: [indexPath], with: .bottom)
-         
-            
         }
+        tableView.reloadData()
     }
     
     
