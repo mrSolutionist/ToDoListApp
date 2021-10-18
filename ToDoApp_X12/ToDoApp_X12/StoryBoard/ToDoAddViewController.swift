@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol Reload {
+    func reloadTable()
+}
+
 class ToDoAddViewController: UIViewController {
+    
+    var delegate: Reload?
+    
     @IBOutlet weak var todoTitle: UITextField!
     
     override func viewDidLoad() {
@@ -18,9 +25,13 @@ class ToDoAddViewController: UIViewController {
     @IBAction func todoAdd(_ sender: Any) {
         
         CoreDataManager.shared.todoSave(title: todoTitle.text ?? "") ?
-            self.dismiss(animated: true, completion: nil) : print("no value")
+            self.dismiss(animated: true, completion: {
+                self.delegate?.reloadTable()
+            }) : print("no value")
         
     }
+    
+
     
     
 

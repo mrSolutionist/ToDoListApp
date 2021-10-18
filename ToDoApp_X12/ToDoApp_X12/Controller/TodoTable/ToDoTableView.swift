@@ -34,12 +34,7 @@ class ToDoTableView: UITableViewController {
             
             self.navigationController?.pushViewController(todoContent, animated: true)
         }
-        else
-        {
-            let todoContent = self.storyboard?.instantiateViewController(withIdentifier: "completedId") as! ToDoContentVC
-            
-            self.navigationController?.pushViewController(todoContent, animated: true)
-        }
+   
         
     }
     

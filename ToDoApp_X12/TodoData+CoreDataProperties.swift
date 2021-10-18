@@ -2,7 +2,7 @@
 //  TodoData+CoreDataProperties.swift
 //  ToDoApp_X12
 //
-//  Created by Robin George on 14/10/21.
+//  Created by Robin George on 18/10/21.
 //
 //
 
@@ -17,8 +17,8 @@ extension TodoData {
     }
 
     @NSManaged public var discription: String?
-    @NSManaged public var tiile: String?
     @NSManaged public var status: Bool
+    @NSManaged public var tiile: String?
 
 }
 

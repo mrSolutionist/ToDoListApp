@@ -9,10 +9,11 @@
         <attribute name="image" optional="YES" attributeType="URI"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="TodoData" positionX="-63" positionY="9" width="128" height="74"/>
-        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="89"/>
+        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="104"/>
     </elements>
 </model>

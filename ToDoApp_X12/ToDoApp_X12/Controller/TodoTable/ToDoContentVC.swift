@@ -10,38 +10,32 @@ import UIKit
 
 class ToDoContentVC: UITableViewController {
     
-    
     var todoArray : [TodoData] = []
     var completedArray : [TodoData] = []
-    var toDoList : [TodoData]?
+
+   
+
+    
+//    var toDoList : [TodoData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         todoOnLoad()
-
-        toDoList = CoreDataManager.shared.userTodoFetch()
+       
+        
+        // Uncomment the following line to preserve selection between presentations
+        //         self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        //        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+//        toDoList = CoreDataManager.shared.userTodoFetch()
     }
     
-    func todoOnLoad(){
-      let todoList = CoreDataManager.shared.userTodoFetch()
-        
-        completedArray.removeAll()
-        todoArray.removeAll()
-        
-        
-        todoList.forEach { todo  in
-            if todo.status{
-                completedArray.append(todo)
-            }
-            else if !todo.status {
-                todoArray.append(todo)
-            }
-        }
-
-
-
-
+    //when using segue, this method is called
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ToDoAddViewController
+        vc.delegate = self
     }
     
     // MARK: - Table view data source
@@ -99,11 +93,17 @@ class ToDoContentVC: UITableViewController {
             (action,view,completionHandler) in
             
             //which item to remove
-            guard let itemToRemove = self?.toDoList?[indexPath.row] else {return}//indexPath is the current row swipped
-            CoreDataManager.shared.delete(itemToRemove)
+            if indexPath.section == 0 {
+                let itemToRemove = self?.todoArray.remove(at: indexPath.row)//indexPath is the current row swipped
+                CoreDataManager.shared.delete(itemToRemove!)
+            }
+            else {
+                let itemToRemove = self?.completedArray.remove(at: indexPath.row)//indexPath is the current row swipped
+                CoreDataManager.shared.delete(itemToRemove!)
+            }
+           
             
             //refresh
-            //           CoreDataManager.shared.userTodoFetch()
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration (actions: [swipe])
@@ -116,76 +116,56 @@ class ToDoContentVC: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //checking for checkmark
-        if  tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+        if indexPath.section == 0{
+//            toDoList![indexPath.row].status = true
+            todoArray[indexPath.row].status = true
             
-            //removing checkmark
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            let doneElement = todoArray.remove(at: indexPath.row)
+            completedArray.append(doneElement)
             
-            //changing the state
-            toDoList?[indexPath.row].status = false
-            
-            
+          
+        }
+        else if indexPath.section == 1{
+//            toDoList![indexPath.row].status = false
+            completedArray[indexPath.row].status = false
+            let doneElement = completedArray.remove(at: indexPath.row)
+            todoArray.append(doneElement)
             
         }
-        else
-        {
-            //adding checkMArk
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            
-     
-            //changing the state
-            toDoList?[indexPath.row].status = true
-            
-        }
+        CoreDataManager.shared.saveContext()
         tableView.reloadData()
+        
+    
     }
     
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+
+    func todoOnLoad(){
+      let todoList = CoreDataManager.shared.userTodoFetch()
+        
+        completedArray.removeAll()
+        todoArray.removeAll()
+        
+        
+        todoList.forEach { todo  in
+            if todo.status{
+                completedArray.append(todo)
+            }
+            else if !todo.status {
+                todoArray.append(todo)
+            }
+        }
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
+}
+
+extension  ToDoContentVC:Reload{
+    func reloadTable() {
+        todoOnLoad()
+        tableView.reloadData()
+    }
     
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

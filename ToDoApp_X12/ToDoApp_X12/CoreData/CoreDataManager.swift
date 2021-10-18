@@ -67,6 +67,7 @@ class CoreDataManager{
         userData.name = name
         userData.password = password
         userData.username = username
+        userData.userId = UUID()
         let url = imageSavefunc(data: data)
         userData.image = url
         do {
@@ -133,12 +134,12 @@ class CoreDataManager{
                     
                     let dbName = objectEntity!.username!
                     let dbPassword = objectEntity!.password!
-                    let userIdHashValue = objectEntity!.hashValue
+                    let userId = objectEntity!.userId?.uuidString
                     
                     if dbName  == name && dbPassword  == pass{
                         let defaults = UserDefaults.standard
                         defaults.set(true,forKey: "UserLoggedIn")
-                        defaults.set(userIdHashValue, forKey: "userId")
+                        defaults.set(userId, forKey: "userId")
                         
                         
                     
@@ -165,11 +166,13 @@ class CoreDataManager{
     
   
     
-    //fetch user
+    //fetch userk
     func userFetch() -> UserData {
-        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
-        objectEntity = (result.firstObject as! UserData)
-        return objectEntity!
+        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as Array
+        for data in result {
+            print(data)
+        }
+        return result.first as! UserData
     }
     
     
