@@ -14,7 +14,7 @@ import UIKit
 
 class CoreDataManager{
     let userFetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
-   
+    
     
     let userTodoFetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoData")
     var objectEntity : UserData?
@@ -27,22 +27,17 @@ class CoreDataManager{
     
     
     lazy var persistentContainer: NSPersistentContainer = {
-       
+        
         let container = NSPersistentContainer(name: "ToDoApp_X12")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-               
+                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-    
-    
-    
-    
-    
-    
+
     // MARK: - Core Data Saving support
     
     func saveContext () {
@@ -70,8 +65,8 @@ class CoreDataManager{
         userData.password = password
         userData.username = username
         userData.userId = UUID()
-        let url = imageSavefunc(data: data)
-        userData.image = url
+        userData.image = data
+        
         do {
             try persistentContainer.viewContext.save()
         } catch  {
@@ -82,33 +77,7 @@ class CoreDataManager{
         return true
     }
     
-    //image url to  dict save
-    func imageSavefunc(data:Data) -> URL{
-        //getting url path from doc to where to save
-        
-        //[0] url returns an array of objects of path, but since it has only one element, [0]
-        let doc = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        
-        //  setting image name
-        let url = doc.appendingPathComponent("proImage.png")
-        
-        do {
-            try data.write(to: url)
-            return url
-        } catch  {
-            
-        }
-        //what to do if i dont have to return anything?
-        return url
-        
-        
-        
-        
-        
-        
-    }
-    
-    
+
     //login Validation Function
     
     func loginValidate(name:String,pass:String) -> Bool  {
@@ -119,8 +88,7 @@ class CoreDataManager{
         let password = NSPredicate(format: "password = %@",pass)
         
         
-        //no idea what the following code does
-        //mayb it uses username as predicate to search .
+        //passes argument as predicate to filter the exact keyword to fetch
         userFetchRequest.predicate = username
         userFetchRequest.predicate = password
         
@@ -144,7 +112,7 @@ class CoreDataManager{
                         defaults.set(userId, forKey: "userId")
                         
                         
-                    
+                        
                         print("Login Succesfully")
                         return true
                     }
@@ -166,11 +134,11 @@ class CoreDataManager{
     }
     
     
-  
+    
     
     //fetch user
     func userFetch() -> UserData? {
-       
+        
         let userId = UserDefaults.standard.string(forKey: "userId")
         let predicateUserId = NSPredicate(format: "userId = %@",userId!)
         
@@ -183,7 +151,7 @@ class CoreDataManager{
     }
     
     
-    //MARK: -ToDo Class functions
+    //MARK:Class functions
     
     //user todo data fetch
     
@@ -221,10 +189,6 @@ class CoreDataManager{
         try! persistentContainer.viewContext.save()
         
     }
-    // test image function
-    
-    
-    
 }
 
 

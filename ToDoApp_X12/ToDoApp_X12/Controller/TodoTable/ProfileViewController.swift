@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-   
+    
     var user : UserData?
     @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,23 +17,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-// FIXME: optional not handled from fetch
+        
+        // FIXME: optional not handled from fetch
         let user = CoreDataManager.shared.userFetch()
         let userId =  UserDefaults.standard.string(forKey: "userId")
-     
+        
         
         if user!.userId?.uuidString == userId {
             nameLabel.text = user!.name
             usernameLabel.text = user!.username
-//            let data =  try! Data(contentsOf:  user.image! )
-//            ProfileImage.image = UIImage(data:data)
+            ProfileImage.image = UIImage(data:user!.image!)
             
         }
         
-
-
-
+        
+        
+        
         
     }
     
