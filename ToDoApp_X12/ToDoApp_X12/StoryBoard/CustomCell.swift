@@ -20,8 +20,16 @@ class CustomCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(cell:CustomCell , todo:TodoData)  {
+    func config(cell:CustomCell , todo:TodoData , status:Bool)  {
         cell.textLabel?.text =  todo.tiile
+//        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        if status{
+            cell.accessoryType = AccessoryType.checkmark
+        }
+        else {
+            cell.accessoryType = AccessoryType.none
+        }
+        
        
         
         

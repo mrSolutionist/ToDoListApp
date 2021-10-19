@@ -63,11 +63,11 @@ class ToDoContentVC: UITableViewController {
         
         //adding the content as per status of content to the respective sections
         if indexPath.section == 0{
-            cell.config(cell:cell, todo:todoArray[indexPath.row])
+            cell.config(cell:cell, todo:todoArray[indexPath.row],status: false)
         }
         else if indexPath.section == 1{
-            cell.config(cell:cell, todo:completedArray[indexPath.row])
-            UITableViewCell.AccessoryType.checkmark
+            cell.config(cell:cell, todo:completedArray[indexPath.row], status: true)
+            
         }
         
         return cell
