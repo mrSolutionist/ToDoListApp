@@ -67,6 +67,7 @@ class ToDoContentVC: UITableViewController {
         }
         else if indexPath.section == 1{
             cell.config(cell:cell, todo:completedArray[indexPath.row])
+            UITableViewCell.AccessoryType.checkmark
         }
         
         return cell

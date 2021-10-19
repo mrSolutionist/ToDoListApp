@@ -22,6 +22,8 @@ class CustomCell: UITableViewCell {
     
     func config(cell:CustomCell , todo:TodoData)  {
         cell.textLabel?.text =  todo.tiile
+       
+        
         
         
     }
