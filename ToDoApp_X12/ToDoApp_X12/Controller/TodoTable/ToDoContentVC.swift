@@ -1,45 +1,30 @@
-//
-//  ToDoContentVC.swift
-//  ToDoApp_X12
-//
-//  Created by Robin George on 08/10/21.
-//
 
 import UIKit
 
-
+//class of displaying todoContent VC
 class ToDoContentVC: UITableViewController {
     
+    //two arrays are initilised to seperate completed and todo arrays into different arrays
     var todoArray : [TodoData] = []
     var completedArray : [TodoData] = []
-
-   
-
     
-//    var toDoList : [TodoData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         todoOnLoad()
-       
         
-        // Uncomment the following line to preserve selection between presentations
-        //         self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-//        toDoList = CoreDataManager.shared.userTodoFetch()
     }
     
     //when using segue, this method is called
+    //here its used for calling the delegate to reload the table once the adding VC is completed
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ToDoAddViewController
         vc.delegate = self
     }
     
-    // MARK: - Table view data source
     
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
@@ -58,6 +43,8 @@ class ToDoContentVC: UITableViewController {
         return title
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
@@ -74,7 +61,7 @@ class ToDoContentVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! CustomCell
         
         
-     //adding the content as per status of content to the respective sections
+        //adding the content as per status of content to the respective sections
         if indexPath.section == 0{
             cell.config(cell:cell, todo:todoArray[indexPath.row])
         }
@@ -101,7 +88,7 @@ class ToDoContentVC: UITableViewController {
                 let itemToRemove = self?.completedArray.remove(at: indexPath.row)//indexPath is the current row swipped
                 CoreDataManager.shared.delete(itemToRemove!)
             }
-           
+            
             
             //refresh
             tableView.reloadData()
@@ -110,23 +97,20 @@ class ToDoContentVC: UITableViewController {
     }
     
     
-    // select action
-    // for checkMark
     
- 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0{
-//            toDoList![indexPath.row].status = true
+
             todoArray[indexPath.row].status = true
             
             let doneElement = todoArray.remove(at: indexPath.row)
             completedArray.append(doneElement)
             
-          
+            
         }
         else if indexPath.section == 1{
-//            toDoList![indexPath.row].status = false
+            //            toDoList![indexPath.row].status = false
             completedArray[indexPath.row].status = false
             let doneElement = completedArray.remove(at: indexPath.row)
             todoArray.append(doneElement)
@@ -135,14 +119,14 @@ class ToDoContentVC: UITableViewController {
         CoreDataManager.shared.saveContext()
         tableView.reloadData()
         
-    
+        
     }
     
     
     
-
+    
     func todoOnLoad(){
-      let todoList = CoreDataManager.shared.userTodoFetch()
+        let todoList = CoreDataManager.shared.userTodoFetch()
         
         completedArray.removeAll()
         todoArray.removeAll()

@@ -14,6 +14,8 @@ import UIKit
 
 class CoreDataManager{
     let userFetchRequest = NSFetchRequest<NSFetchRequestResult>( entityName: "UserData")
+   
+    
     let userTodoFetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoData")
     var objectEntity : UserData?
     
@@ -166,13 +168,18 @@ class CoreDataManager{
     
   
     
-    //fetch userk
-    func userFetch() -> UserData {
-        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as Array
-        for data in result {
-            print(data)
+    //fetch user
+    func userFetch() -> UserData? {
+       
+        let userId = UserDefaults.standard.string(forKey: "userId")
+        let predicateUserId = NSPredicate(format: "userId = %@",userId!)
+        
+        userFetchRequest.predicate = predicateUserId
+        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
+        if result.count > 0 {
+            return result.firstObject as? UserData
         }
-        return result.first as! UserData
+        return nil
     }
     
     
