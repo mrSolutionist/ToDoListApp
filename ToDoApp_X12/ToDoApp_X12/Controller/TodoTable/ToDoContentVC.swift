@@ -94,7 +94,43 @@ class ToDoContentVC: UITableViewController {
             //refresh
             tableView.reloadData()
         }
-        return UISwipeActionsConfiguration (actions: [swipe])
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit"){ [weak self]
+            (action,view,completionHandler) in
+            
+            //which item to remove
+            if indexPath.section == 0 {
+                let itemToEdit = self?.todoArray[indexPath.row]
+         
+                let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+                alert.addTextField { x in
+                    x.placeholder = "enter title"
+                   
+                }
+                alert.addTextField { x in
+                    x.placeholder = "enter description"
+                   
+                }
+                let titleAndDescription = alert.textFields
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    itemToEdit?.tiile = titleAndDescription![0].text
+                    itemToEdit?.discription = titleAndDescription![1].text
+                    CoreDataManager.shared.saveContext()
+                }))
+                self?.present(alert, animated: true, completion: nil)
+            }
+            else {
+                let itemToRemove = self?.completedArray.remove(at: indexPath.row)//indexPath is the current row swipped
+                CoreDataManager.shared.delete(itemToRemove!)
+            }
+            
+            
+            //refresh
+            tableView.reloadData()
+        }
+        
+        
+        return UISwipeActionsConfiguration (actions: [swipe,edit])
     }
     
     

@@ -14,6 +14,7 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var toDoTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         
         // Initialization code
     }
