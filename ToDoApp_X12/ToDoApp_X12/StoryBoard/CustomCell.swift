@@ -9,8 +9,12 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
+
+    @IBOutlet weak var toDoDescription: UILabel!
+    @IBOutlet weak var toDoTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -21,8 +25,9 @@ class CustomCell: UITableViewCell {
     }
     
     func config(cell:CustomCell , todo:TodoData , status:Bool)  {
-        cell.textLabel?.text =  todo.tiile
-//        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        cell.toDoTitle.text =  todo.tiile
+        cell.toDoDescription.text =  todo.discription
+
         if status{
             cell.accessoryType = AccessoryType.checkmark
         }

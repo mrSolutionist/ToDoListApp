@@ -163,11 +163,12 @@ class CoreDataManager{
     
     
     //todo fetch
-    func todoSave(title:String ) -> Bool {
+    func todoSave(title:String ,description:String) -> Bool {
         let todoUser = TodoData(context: persistentContainer.viewContext)
         
         todoUser.tiile = title
         todoUser.status = false
+        todoUser.discription = description
         
         do {
             try persistentContainer.viewContext.save()

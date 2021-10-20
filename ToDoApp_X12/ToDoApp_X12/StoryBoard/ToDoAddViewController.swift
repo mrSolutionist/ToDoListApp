@@ -16,15 +16,18 @@ class ToDoAddViewController: UIViewController {
     var delegate: Reload?
     
     @IBOutlet weak var todoTitle: UITextField!
+  
+    @IBOutlet weak var todoDescription: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
     }
+   
     @IBAction func todoAdd(_ sender: Any) {
         
-        CoreDataManager.shared.todoSave(title: todoTitle.text ?? "") ?
+        CoreDataManager.shared.todoSave(title: todoTitle.text ?? "no title", description: todoDescription.text ?? "no desc") ?
             self.dismiss(animated: true, completion: {
                 self.delegate?.reloadTable()
             }) : print("no value")
