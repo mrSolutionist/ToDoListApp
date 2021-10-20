@@ -58,7 +58,7 @@ class CoreDataManager{
     //MARK: USER SAVING AND LOGIN FUNCTIONS
     
     //Saving userdata after signUp
-    func saveUser(name:String, password:String, username: String , data:Data) -> Bool{
+    func saveUser(name:String, password:String, username: String, lastname:String , data:Data ) -> Bool{
         
         let userData = UserData(context:persistentContainer.viewContext)
         userData.name = name
@@ -66,6 +66,7 @@ class CoreDataManager{
         userData.username = username
         userData.userId = UUID()
         userData.image = data
+        userData.lastName = lastname
         
         do {
             try persistentContainer.viewContext.save()

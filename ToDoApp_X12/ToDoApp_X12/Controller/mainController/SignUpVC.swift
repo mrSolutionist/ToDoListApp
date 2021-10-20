@@ -18,6 +18,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     
     
     //main
@@ -54,7 +55,7 @@ class SignUpVC: UIViewController {
             let imageData = profileImg.image?.pngData()
             
             //saving func called in core data
-            let save = CoreDataManager.shared.saveUser(name: name, password: password, username: username,data: imageData!)
+            let save = CoreDataManager.shared.saveUser(name: name, password: password, username: username,lastname: lastNameField.text!,data: imageData!)
             
             //if save retuen true
             if save {
