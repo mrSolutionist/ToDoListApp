@@ -74,9 +74,10 @@ class ToDoContentVC: UITableViewController {
     }
     
     
-    //deleting swipe
+  
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        //deleting swipe
         let swipe = UIContextualAction(style: .destructive, title: "delete"){ [weak self]
             (action,view,completionHandler) in
             
@@ -95,10 +96,15 @@ class ToDoContentVC: UITableViewController {
             tableView.reloadData()
         }
         
+        //edit
+       
+            
+     
+        
         let edit = UIContextualAction(style: .normal, title: "Edit"){ [weak self]
             (action,view,completionHandler) in
             
-            //which item to remove
+            //which item to edit
             if indexPath.section == 0 {
                 let itemToEdit = self?.todoArray[indexPath.row]
          
@@ -123,14 +129,17 @@ class ToDoContentVC: UITableViewController {
             }
             
            
-            
+      
             
             //refresh
             tableView.reloadData()
         }
+       
+        if indexPath.section == 1 {
+            return  UISwipeActionsConfiguration (actions: [swipe])
+        }
         
-        
-        return UISwipeActionsConfiguration (actions: [swipe,edit])
+        return  UISwipeActionsConfiguration (actions: [swipe,edit])
     }
     
     
