@@ -7,6 +7,7 @@
     </entity>
     <entity name="UserData" representedClassName=".UserData" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -14,6 +15,6 @@
     </entity>
     <elements>
         <element name="TodoData" positionX="-63" positionY="9" width="128" height="74"/>
-        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="104"/>
+        <element name="UserData" positionX="-248.1347045898438" positionY="-3.198944091796875" width="128" height="119"/>
     </elements>
 </model>

@@ -11,6 +11,7 @@ class ToDoContentVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "TO-DO"
         todoOnLoad()
         
         
@@ -78,7 +79,7 @@ class ToDoContentVC: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         //deleting swipe
-        let swipe = UIContextualAction(style: .destructive, title: "delete"){ [weak self]
+        let delete = UIContextualAction(style: .destructive, title: "delete"){ [weak self]
             (action,view,completionHandler) in
             
             //which item to remove
@@ -98,9 +99,6 @@ class ToDoContentVC: UITableViewController {
         
         //edit
        
-            
-     
-        
         let edit = UIContextualAction(style: .normal, title: "Edit"){ [weak self]
             (action,view,completionHandler) in
             
@@ -124,6 +122,8 @@ class ToDoContentVC: UITableViewController {
                     CoreDataManager.shared.saveContext()
                     tableView.reloadData()
                 }))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: nil))
+                
                 self?.present(alert, animated: true, completion: nil)
                 
             }
@@ -136,10 +136,10 @@ class ToDoContentVC: UITableViewController {
         }
        
         if indexPath.section == 1 {
-            return  UISwipeActionsConfiguration (actions: [swipe])
+            return  UISwipeActionsConfiguration (actions: [delete])
         }
         
-        return  UISwipeActionsConfiguration (actions: [swipe,edit])
+        return  UISwipeActionsConfiguration (actions: [delete,edit])
     }
     
     

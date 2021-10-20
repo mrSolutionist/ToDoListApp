@@ -10,13 +10,15 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     var user : UserData?
-    @IBOutlet weak var ProfileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var lastNameLabel: UILabel!
     
     @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // FIXME: optional not handled from fetch
         let user = CoreDataManager.shared.userFetch()
@@ -26,7 +28,8 @@ class ProfileViewController: UIViewController {
         if user!.userId?.uuidString == userId {
             nameLabel.text = user!.name
             usernameLabel.text = user!.username
-            ProfileImage.image = UIImage(data:user!.image!)
+            lastNameLabel.text = user!.lastName
+            profileImage.image = UIImage(data:user!.image!)
             
         }
         
@@ -46,3 +49,5 @@ class ProfileViewController: UIViewController {
     }
     
 }
+
+

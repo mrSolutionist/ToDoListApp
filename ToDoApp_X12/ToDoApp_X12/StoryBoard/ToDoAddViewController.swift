@@ -21,7 +21,7 @@ class ToDoAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.title = "ADD TODO"
         // Do any additional setup after loading the view.
     }
    
