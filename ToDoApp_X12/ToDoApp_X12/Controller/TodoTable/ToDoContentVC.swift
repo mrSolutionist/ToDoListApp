@@ -102,7 +102,7 @@ class ToDoContentVC: UITableViewController {
             if indexPath.section == 0 {
                 let itemToEdit = self?.todoArray[indexPath.row]
          
-                let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Edit ToDo", message:nil, preferredStyle: .alert)
                 alert.addTextField { x in
                     x.placeholder = "enter title"
                    
@@ -112,17 +112,17 @@ class ToDoContentVC: UITableViewController {
                    
                 }
                 let titleAndDescription = alert.textFields
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: "Default action"), style: .default, handler: { _ in
                     itemToEdit?.tiile = titleAndDescription![0].text
                     itemToEdit?.discription = titleAndDescription![1].text
                     CoreDataManager.shared.saveContext()
+                    tableView.reloadData()
                 }))
                 self?.present(alert, animated: true, completion: nil)
+                
             }
-            else {
-                let itemToRemove = self?.completedArray.remove(at: indexPath.row)//indexPath is the current row swipped
-                CoreDataManager.shared.delete(itemToRemove!)
-            }
+            
+           
             
             
             //refresh
