@@ -37,7 +37,7 @@ class CoreDataManager{
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
     
     func saveContext () {
@@ -78,7 +78,7 @@ class CoreDataManager{
         return true
     }
     
-
+    
     //login Validation Function
     
     func loginValidate(name:String,pass:String) -> Bool  {
@@ -95,103 +95,94 @@ class CoreDataManager{
         
         
         do
+        {
+            let result = try persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
+            
+            if result.count>0
             {
-                let result = try persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
-                
-                if result.count>0
-                {
-                    
-                    objectEntity = result.firstObject as? UserData
-                    
-                    let dbName = objectEntity!.username!
-                    let dbPassword = objectEntity!.password!
-                    let userId = objectEntity!.userId?.uuidString
-                    
-                    if dbName  == name && dbPassword  == pass{
+                for user in result{
+                    let x = user as! UserData
+                    if x.username == name && x.password == pass {
                         let defaults = UserDefaults.standard
+                        let userId = x.userId?.uuidString
                         defaults.set(true,forKey: "UserLoggedIn")
                         defaults.set(userId, forKey: "userId")
-                        
-                        
-                        
-                        print("Login Succesfully")
                         return true
                     }
-                    else
-                    {
-                        print("Wrong username or password !!!")
-                        return false
-                    }
                 }
-                
+                    
+                }
+             
             }
-        
-        catch
-        {
-            let fetch_error = error as NSError
-            print("error", fetch_error.localizedDescription)
-        }
-        return false
-    }
-    
-    
-    
-    
-    //fetch user
-    func userFetch() -> UserData? {
-        
-        let userId = UserDefaults.standard.string(forKey: "userId")
-        let predicateUserId = NSPredicate(format: "userId = %@",userId!)
-        
-        userFetchRequest.predicate = predicateUserId
-        let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
-        if result.count > 0 {
-            return result.firstObject as? UserData
-        }
-        return nil
-    }
-    
-    
-    //MARK:Class functions
-    
-    //user todo data fetch
-    
-    func userTodoFetch() -> [TodoData]  {
-        let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) as? [TodoData]
-        
-        return todo!
-    }
-    
-    
-    //todo fetch
-    func todoSave(title:String ,description:String) -> Bool {
-        let todoUser = TodoData(context: persistentContainer.viewContext)
-        
-        todoUser.tiile = title
-        todoUser.status = false
-        todoUser.discription = description
-        
-        do {
-            try persistentContainer.viewContext.save()
-            return true
             
-        }
-        catch
-        {
+            
+            
+            catch
+            {
+                let fetch_error = error as NSError
+                print("error", fetch_error.localizedDescription)
+            }
             return false
         }
         
         
         
-    }
-    
-    //delete
-    func delete(_ list: TodoData ){
-        persistentContainer.viewContext.delete(list)
-        try! persistentContainer.viewContext.save()
         
+        //fetch user
+        func userFetch() -> UserData? {
+            
+            let userId = UserDefaults.standard.string(forKey: "userId")
+            let predicateUserId = NSPredicate(format: "userId = %@",userId!)
+            
+            userFetchRequest.predicate = predicateUserId
+            let result = try! persistentContainer.viewContext.fetch(userFetchRequest) as NSArray
+            if result.count > 0 {
+                return result.firstObject as? UserData
+            }
+            return nil
+        }
+        
+        
+        //MARK:Class functions
+        
+        //user todo data fetch
+        
+        func userTodoFetch() -> [TodoData]  {
+            let todo = try! persistentContainer.viewContext.fetch(userTodoFetchResult) as? [TodoData]
+            
+            return todo!
+        }
+        
+        
+        //todo fetch
+        func todoSave(title:String ,description:String) -> Bool {
+            let todoUser = TodoData(context: persistentContainer.viewContext)
+            
+            todoUser.tiile = title
+            todoUser.status = false
+            todoUser.discription = description
+            
+            do {
+                try persistentContainer.viewContext.save()
+                return true
+                
+            }
+            catch
+            {
+                return false
+            }
+            
+            
+            
+        }
+        
+        //delete
+        func delete(_ list: TodoData ){
+            persistentContainer.viewContext.delete(list)
+            try! persistentContainer.viewContext.save()
+            
+        }
     }
-}
 
 
 
