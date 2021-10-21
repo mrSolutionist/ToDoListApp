@@ -51,7 +51,7 @@ class SignUpVC: UIViewController {
         //condition check and save
         if !notEmpty() && ( password == repassword){
             
-            let defaultImg  = #imageLiteral(resourceName: "person.crop.circle@2x.png")
+            let defaultImg:UIImage = #imageLiteral(resourceName: "camera.shutter.button.fill")
             // image taken is converted to binary, png
             let imageData = profileImg.image?.pngData() ?? defaultImg.pngData()
             
