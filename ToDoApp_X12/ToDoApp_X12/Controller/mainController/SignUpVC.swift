@@ -38,26 +38,27 @@ class SignUpVC: UIViewController {
     
     
     //if any data , then validate else alert
-    @IBAction func registerBtn(_ sender: Any) {
+    @IBAction func registerBtn(_ sender: Any)   {
         
         //assigning data
-        let name = nameField.text!
+        let name = nameField?.text
+        let Lname = lastNameField?.text
         
-        let password = passwordField.text!
-        let username = userNameField.text!
-        print(name,password,username)
-        
-        
+        let password = passwordField?.text
+        let repassword = rePasswordField?.text
+        let username = userNameField?.text
+
         //condition check and save
-        if !notEmpty() && (passwordField.text == rePasswordField.text){
+        if !notEmpty() && ( password == repassword){
             
+            let defaultImg  = #imageLiteral(resourceName: "person.crop.circle@2x.png")
             // image taken is converted to binary, png
-            let imageData = profileImg.image?.pngData()
+            let imageData = profileImg.image?.pngData() ?? defaultImg.pngData()
             
             //saving func called in core data
-            let save = CoreDataManager.shared.saveUser(name: name, password: password, username: username,lastname: lastNameField.text!,data: imageData!)
+            let save = CoreDataManager.shared.saveUser(name: name ?? "no name", password: password ?? "no password", username: username ?? "no username",lastname: Lname ?? "no lastname" ,data: imageData! )
             
-            //if save retuen true
+            //if save return true
             if save {
                 let alert =  UIAlertController(title: "Saved", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler:{action in self.exit()

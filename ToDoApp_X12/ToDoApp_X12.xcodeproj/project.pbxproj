@@ -12,6 +12,7 @@
 		BC140FB2270C7B71009BEFBB /* TodoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140FAE270C7B71009BEFBB /* TodoData+CoreDataClass.swift */; };
 		BC4A2FC027205878002E54A0 /* TodoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A2FBE27205877002E54A0 /* TodoData+CoreDataProperties.swift */; };
 		BC4A2FC127205878002E54A0 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A2FBF27205877002E54A0 /* UserData+CoreDataProperties.swift */; };
+		BC4A2FC327208874002E54A0 /* UIbuttonSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A2FC227208874002E54A0 /* UIbuttonSub.swift */; };
 		BC9F8AE6270EE21400ADF07D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */; };
 		BCA8F5C12705985800E71F83 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8F5C02705985800E71F83 /* LoginVC.swift */; };
 		BCBF172A2717EEB1002E14E1 /* ToDoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBF17292717EEB1002E14E1 /* ToDoArray.swift */; };
@@ -35,6 +36,7 @@
 		BC140FAE270C7B71009BEFBB /* TodoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BC4A2FBE27205877002E54A0 /* TodoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC4A2FBF27205877002E54A0 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC4A2FC227208874002E54A0 /* UIbuttonSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIbuttonSub.swift; sourceTree = "<group>"; };
 		BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoAddViewController.swift; path = ToDoApp_X12/StoryBoard/ToDoAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		BCA8F5C02705985800E71F83 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BCBF17292717EEB1002E14E1 /* ToDoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoArray.swift; path = ToDoApp_X12/Controller/TodoTable/ToDoArray.swift; sourceTree = SOURCE_ROOT; };
@@ -89,6 +91,7 @@
 				BCC6B50627116CDE00566E81 /* CustomCell.swift */,
 				BC9F8AE5270EE21400ADF07D /* ToDoAddViewController.swift */,
 				BCC6B4FC2710124E00566E81 /* ToDoContentVC.swift */,
+				BC4A2FC227208874002E54A0 /* UIbuttonSub.swift */,
 				BCCF267E270A1797005514E4 /* ProfileViewController.swift */,
 				BCBF172B271941E4002E14E1 /* objectProtocol.swift */,
 				BC037C5D270845B300CF3457 /* UserTabBarControllerVC.swift */,
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4A2FC327208874002E54A0 /* UIbuttonSub.swift in Sources */,
 				BC4A2FC127205878002E54A0 /* UserData+CoreDataProperties.swift in Sources */,
 				BCE7F518270581AA004662EF /* CoreDataManager.swift in Sources */,
 				BC140FB0270C7B71009BEFBB /* UserData+CoreDataClass.swift in Sources */,

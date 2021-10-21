@@ -33,17 +33,28 @@ class ToDoContentVC: UITableViewController {
     
     
     //header for sections
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  title = UILabel()
-        if section == 0 {
-            title.text = "TO-DO"
-        }
-        else {
-            title.text = "COMPLETED"
-        }
-        return title
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: CGRect(x: 15, y: 0, width: view.frame.width , height: 40))
+//        view.backgroundColor = .systemGray
+//        let  title = UILabel(frame: CGRect(x: 15, y:0, width: view.frame.width - 15, height: 40))
+//        if section == 0 {
+//            title.text = "TO-DO"
+//            
+//        }
+//        else {
+//            title.text = "COMPLETED"
+//            title.textColor = .white
+//            
+//        }
+//        view.addSubview(title)
+//        return title
+//    }
+//
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        
+        return "Section \(section + 1)"
     }
-    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
